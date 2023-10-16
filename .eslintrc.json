@@ -6,9 +6,7 @@
     },
     "extends": [
         "plugin:react/recommended",
-        "standard-with-typescript",
-        "plugin:testing-library/react",
-        "plugin:jest-dom/recommended"
+        "standard-with-typescript"
     ],
     "overrides": [
     ],
@@ -20,30 +18,13 @@
         "react"
     ],
     "rules": {
-        "@typescript-eslint/explicit-function-return-type": "off",
         "react/react-in-jsx-scope": "off",
-        // use single quotes
-        "quotes": ["error", "single"],
-        // indent 2 spaces
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/triple-slash-reference": "off",
         "indent": ["error", 2]
-        // "react/function-component-definition": [
-        //     "error",
-        //     {
-        //         "namedComponents": "function-declaration",
-        //         "unnamedComponents": "function-expression"
-        //     }
-        // ]
-
     },
     "ignorePatterns": [
-        ".eslintrc.js",
-        "next-env.d.ts",
-        "node_modules",
-        "out",
-        "public",
-        "tsconfig.json",
-        "__mocks__",
-        "*.config.js",
-        "*.config.mjs"
+        "*.config.*",
+        "*.setup.*"
     ]
 }
