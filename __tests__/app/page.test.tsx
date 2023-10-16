@@ -5,7 +5,11 @@ import Home from '@/app/page'
 describe('Home', () => {
   it('renders a heading', () => {
     render(<Home />)
-    const btn = screen.getByRole('button', { name: /BtnTest/i })
-    expect(btn).toBeInTheDocument()
+
+    const btnTest = screen.getByRole('button', {
+      name: /custom button/i
+    })
+
+    expect(btnTest).toBeInTheDocument()
   })
 })

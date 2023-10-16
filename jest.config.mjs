@@ -1,5 +1,5 @@
 import nextJest from 'next/jest.js'
-
+ 
 const createJestConfig = nextJest({
   // Provide the path to your Next.js app to load next.config.js and .env files in your test environment
   dir: './',
@@ -11,10 +11,13 @@ const config = {
   // Add more setup options before each test is run
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
   testEnvironment: 'jest-environment-jsdom',
+  testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/.next/'],
+  // collectCoverage: true, // enable coverage
   collectCoverageFrom: [
-    './src/**/*.{js,jsx,ts,tsx}'
+    '<rootDir>/src/**/*.{js,jsx,ts,tsx}'
   ],
   coverageReporters: ['lcov', 'text', 'html', 'text-summary', 'cobertura'],
+  coverageDirectory: '<rootDir>/coverage',
   preset: 'ts-jest',
 }
  
