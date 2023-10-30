@@ -1,7 +1,9 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import { Footer } from '@/components/common/footer'
 import './globals.css'
+import { Inter } from 'next/font/google'
+import { Header } from '@/components/common/header'
+import { Footer } from '@/components/common/footer'
+import { SessionAuthProvider } from '@/context/session-auth-provider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,9 +19,24 @@ export default function RootLayout ({
 }) {
   return (
     <html lang="en">
+      <head>
+        <title>OFFCORS</title>
+      </head>
       <body className={inter.className}>
-        {children}
-        <Footer />
+        <section className="relative min-h-screen w-full flex flex-col items-center justify-between">
+          <SessionAuthProvider>
+            <div className='w-full h-full'>
+              <Header />
+              {children}
+            </div>
+            <Footer />
+          </SessionAuthProvider>
+          {/* <div
+            style={{
+              clipPath: 'polygon(0 0, 80% 0%, 50% 100%, 0 100%)',
+              zIndex: -1
+            }} className="absolute top-0 left-0 w-full h-full bg-[#FFDD00]" /> */}
+        </section>
       </body>
     </html>
   )

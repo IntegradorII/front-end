@@ -1,12 +1,8 @@
-import Link from 'next/link'
-import { CustomButton } from '@/components/custom-buttom'
-
-export default function Home () {
+export default function App () {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1 className="text-3xl">Hello world!</h1>
-      <Link href="/about">Go to About</Link>
-      <CustomButton>custom button</CustomButton>
+    <main className="flex flex-col items-center gap-5 p-2">
+      <h1 className="text-3x">Welcome to OFFCORS</h1>
+      <p className="text-2x">The best way to manage your projects</p>
     </main>
   )
 }
