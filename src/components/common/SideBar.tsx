@@ -10,8 +10,8 @@ const SideBar = () => {
     <div className='flex w-[25%] h-full fixed justify-center'>
       <div className='top-0 left-0 my-10 mx-12 w-full'>
         <div className="flex flex-col items-center bg-white px-4 py-6 rounded-3xl text-sm">
-          <div className='w-full flex flex-col items-center rounded-full'>
-            <Image src="/images/ProfilePhoto.png" alt="Foto de perfil" width={90} height={90}/>
+          <div className='w-full flex flex-col items-center'>
+            <Image src="/images/ProfilePhoto.png" alt="Foto de perfil" width={90} height={90} className='rounded-full'/>
             <div className='flex flex-col items-center font-bold text-base'>
               <p>Hola,</p>
               <p>Juanita Pérez</p>
