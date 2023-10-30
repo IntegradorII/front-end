@@ -12,7 +12,7 @@ interface ChildCardProps {
 const ChildCard = ({ imagePath, rship, name, birthDay }: (ChildCardProps)) => {
   return (
     <div className="flex bg-white rounded-xl w-fit py-3 hover:cursor-pointer">
-      <div className='px-6'>
+      <div className='px-6 rounded-full'>
         <Image src={imagePath} alt="Foto de perfil" width={90} height={90}/>
       </div>
       <div className='w-fit'>

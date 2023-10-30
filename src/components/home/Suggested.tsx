@@ -10,7 +10,7 @@ const Suggested = ({ title }: (SuggestedProps)) => {
     <div className="flex flex-col font-bold gap-4">
       {title}
       <div className="w-full h-[171px] flex justify-between bg-white rounded-lg scrollbar-hide">
-        <div className='arrow-button rounded-lg px-5'>
+        <div className='arrow-button rounded-2xl px-5'>
           <SlArrowLeft/>
         </div>
         <VerticalSeparator percentage={100}/>

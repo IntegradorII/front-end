@@ -36,7 +36,7 @@ const Home = () => {
           <div className='flex flex-col px-16'>
             <Suggested title='Prendas para ser cool'/>
           </div>
-          <div className='my-4'>
+          <div className='my-6'>
             <HorizontalSeparator percentage={95}/>
           </div>
           <div className='flex flex-col px-16'>
