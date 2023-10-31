@@ -46,8 +46,8 @@ export const kidProfiles: KidProfile[] = [
   {
     id: 'ax1',
     profileType: 'kid',
-    firstName: 'John',
-    lastName: 'Doe',
+    firstName: 'Juanita',
+    lastName: 'Perez',
     gender: 'Masculino',
     birthDate: '01/01/2010',
     topSize: 'M',
@@ -78,30 +78,30 @@ export const saleItems: SaleItem[] = [
     image: '/images/img-no-disponible.png',
     profileId: 'ax1'
   },
-  {
-    id: 'cx2',
-    name: 'Camisa de cuadros',
-    image: '/images/img-no-disponible.png',
-    profileId: 'ax1'
-  },
-  {
-    id: 'cx3',
-    name: 'Camisa de cuadros',
-    image: '/images/img-no-disponible.png',
-    profileId: 'ax1'
-  },
-  {
-    id: 'cx4',
-    name: 'Camisa de cuadros',
-    image: '/images/img-no-disponible.png',
-    profileId: 'ax1'
-  },
-  {
-    id: 'cx5',
-    name: 'Camisa de cuadros',
-    image: '/images/img-no-disponible.png',
-    profileId: 'ax1'
-  },
+  // {
+  //   id: 'cx2',
+  //   name: 'Camisa de cuadros',
+  //   image: '/images/img-no-disponible.png',
+  //   profileId: 'ax1'
+  // },
+  // {
+  //   id: 'cx3',
+  //   name: 'Camisa de cuadros',
+  //   image: '/images/img-no-disponible.png',
+  //   profileId: 'ax1'
+  // },
+  // {
+  //   id: 'cx4',
+  //   name: 'Camisa de cuadros',
+  //   image: '/images/img-no-disponible.png',
+  //   profileId: 'ax1'
+  // },
+  // {
+  //   id: 'cx5',
+  //   name: 'Camisa de cuadros',
+  //   image: '/images/img-no-disponible.png',
+  //   profileId: 'ax1'
+  // },
   {
     id: 'cx6',
     name: 'Camisa de cuadros',

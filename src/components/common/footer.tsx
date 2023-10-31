@@ -1,4 +1,4 @@
-export function Footer () {
+const Footer = () => {
   return (
     <footer className="w-full h-11 bg-black text-white text-sm flex items-center justify-between px-5">
       <div>@CopyRight</div>
@@ -10,3 +10,5 @@ export function Footer () {
     </footer>
   )
 }
+
+export { Footer }

@@ -7,10 +7,10 @@ interface KidProfileProps {
 export async function KidProfile ({ profile }: KidProfileProps) {
   const saleItems: SaleItem[] = await getSaleItems(profile.id)
   return (
-    <section className='flex w-4/5 h-full py-3'>
-      <div className='flex flex-col items-center justify-start gap-2 w-1/2'>
+    <section className='flex w-full h-full py-7'>
+      <div className='flex flex-col items-center justify-start gap-3 w-1/2'>
         <h2 className='font-bold text-xl'>Datos de {profile.firstName}</h2>
-        <div className='w-full max-w-[10rem] flex flex-col items-center justify-center px-4'>
+        <div className='w-full max-w-[10rem] flex flex-col items-center justify-center gap-1 px-4'>
           <img src={profile.image} alt={profile.firstName} className='rounded-full object-cover bg-center' />
           <span className='text-lg'>{profile.firstName} {profile.lastName}</span>
         </div>
@@ -18,7 +18,7 @@ export async function KidProfile ({ profile }: KidProfileProps) {
         </div>
         <div className='flex flex-col gap-1 max-w-[17rem]'>
           <h2 className='font-bold text-xl'>Ultimas compras</h2>
-          <div className='w-full flex flex-wrap items-center justify-center gap-2'>
+          <div className='w-full flex flex-wrap items-center justify-center gap-3'>
             {saleItems.map((item) => (
               <div key={item.id} className='flex flex-col items-center justify-center w-[45%] bg-gray-200 rounded-lg overflow-hidden'>
                 <div className='p-2'>
@@ -51,7 +51,7 @@ export async function KidProfile ({ profile }: KidProfileProps) {
         </div> */}
       </div>
       <span className='w-[2px] bg-white h-full' />
-      <div className='flex flex-col items-center gap-4 w-1/2'>
+      <div className='flex flex-col items-center gap-5 w-1/2'>
         <h2 className='font-bold text-xl'>Tallas de {profile.firstName}</h2>
         <div className='flex flex-col items-start gap-1 max-w-[17rem]'>
           <label className='pl-3 font-bold'>Talla superior:</label>

@@ -1,6 +1,8 @@
 'use client'
 
 import { signIn, signOut, useSession } from 'next-auth/react'
+import { FaUser } from 'react-icons/fa'
+import { TbLogout } from 'react-icons/tb'
 import { useRouter } from 'next/navigation'
 
 export function ButtonAuth () {
@@ -28,19 +30,24 @@ export function ButtonAuth () {
   }
 
   return (
-    <div className="flex items-center gap-2">
+    <div className="flex items-center justify-center px-2">
       {session && (
-        <span className="text-[#FFDD00]">
-          Hola, {session.user?.name ?? session.user?.email}
-        </span>
+        <div className='navbar-item'>
+          <FaUser/>
+          <span className='text-sm'>Juanita</span>
+        </div>
       )}
       <button
         // eslint-disable-next-line @typescript-eslint/no-misused-promises
         onClick={handleClick}
-        className={`bg-[#FFDD00] text-[#1D1D1E] px-5 py-2 rounded-md
-        ${status === 'loading' ? 'opacity-50 pointer-events-none' : ''}`}
+        className={`${status === 'loading' ? 'opacity-50 pointer-events-none' : ''}`}
       >
-        {session ? 'Cerrar Sesion' : 'Iniciar Sesion'}
+        {session
+          ? <div className='navbar-item'>
+            <TbLogout/>
+            <span className='text-sm'>Salir</span>
+          </div>
+          : 'Iniciar Sesion'}
       </button>
     </div>
   )

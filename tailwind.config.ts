@@ -16,6 +16,15 @@ const config: Config = {
       boxShadow: {
         'white-md': '0 4px 6px -1px rgb(255 255 255 / 0.5), 0 2px 4px -2px rgb(255 255 255 / 0.5)',
       },
+      colors: {
+        'light-gray': '#ededed',
+        'medium-gray': '#444646',
+        'dark-gray': '#1d1d1e',
+        'separator-gray': '#d9d9d9',
+        'yellow': '#ffbd00',
+        'secondary-text': '#444647',
+        'light-text': '#a1a2a2'
+      }
     },
   },
   plugins: [],
