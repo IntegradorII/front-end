@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import { VerticalSeparator } from '../common/vertical-separator'
 import { LiaBirthdayCakeSolid } from 'react-icons/lia'
-import { useRouter } from 'next/navigation'
+import Link from 'next/link'
 
 interface ChildCardProps {
   imagePath: string
@@ -13,12 +13,8 @@ interface ChildCardProps {
 }
 
 const ChildCard = ({ imagePath, rship, name, birthDay }: (ChildCardProps)) => {
-  const router = useRouter()
-  const handleClick = () => {
-    router.push('/dashboard/profile/ax1')
-  }
   return (
-    <div className="flex bg-white rounded-xl w-fit py-3 hover:cursor-pointer" onClick={handleClick} >
+    <Link href='/dashboard/profile/ax1' className="flex bg-white rounded-xl py-3">
       <div className='px-6'>
         <Image src={imagePath} alt="Foto de perfil" width={90} height={90} className='rounded-full'/>
       </div>
@@ -37,7 +33,7 @@ const ChildCard = ({ imagePath, rship, name, birthDay }: (ChildCardProps)) => {
           <span className='text-secondary-text text-sm font-bold'>{birthDay}</span>
         </div>
       </div>
-    </div>
+    </Link>
   )
 }
 
