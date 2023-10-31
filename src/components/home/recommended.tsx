@@ -5,7 +5,7 @@ interface SuggestedProps {
   title: string
 }
 
-const Suggested = ({ title }: (SuggestedProps)) => {
+const Recommended = ({ title }: (SuggestedProps)) => {
   return (
     <div className="w-full flex flex-col font-bold gap-4">
       {title}
@@ -44,4 +44,4 @@ const Suggested = ({ title }: (SuggestedProps)) => {
   )
 }
 
-export { Suggested }
+export { Recommended }

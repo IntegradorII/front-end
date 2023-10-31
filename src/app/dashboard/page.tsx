@@ -2,7 +2,7 @@ import { HorizontalSeparator } from '@/components/common/horizontal-separator'
 import { AddProfile } from '@/components/home/add-profile'
 import { ChildCard } from '@/components/home/child-card'
 import { ProfilesBar } from '@/components/home/profiles-bar'
-import { Suggested } from '@/components/home/suggested'
+import { Recommended } from '@/components/home/recommended'
 import { SlArrowLeft, SlArrowRight } from 'react-icons/sl'
 
 const Home = () => {
@@ -27,9 +27,9 @@ const Home = () => {
         </div>
       </div>
       <HorizontalSeparator percentage={100}/>
-      <Suggested title='Prendas para ser cool'/>
+      <Recommended title='Prendas para ser cool'/>
       <HorizontalSeparator percentage={100}/>
-      <Suggested title='Accesorios para mascotas'/>
+      <Recommended title='Accesorios para mascotas'/>
     </div>
   )
 }
