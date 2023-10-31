@@ -1,5 +1,5 @@
 import { SlArrowLeft, SlArrowRight } from 'react-icons/sl'
-import { VerticalSeparator } from '../common/vertical-separator'
+import { VerticalSeparator } from '@/components/common/vertical-separator'
 
 interface SuggestedProps {
   title: string

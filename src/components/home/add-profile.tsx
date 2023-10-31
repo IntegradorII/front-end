@@ -1,5 +1,5 @@
 import { GrAddCircle } from 'react-icons/gr'
-import { Button } from '../common/button'
+import { Button } from '@/components/common/add-button'
 
 interface AddProfileProps {
   text: string

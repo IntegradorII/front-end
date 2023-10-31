@@ -1,8 +1,8 @@
 'use client'
 
 import Image from 'next/image'
-import { PercentageBar } from '../home/percentage-bar'
-import { HorizontalSeparator } from './horizontal-separator'
+import { PercentageBar } from '@/components/home/percentage-bar'
+import { HorizontalSeparator } from '@/components/common/horizontal-separator'
 import { BsFillStarFill } from 'react-icons/bs'
 import { PiStarDuotone } from 'react-icons/pi'
 import Link from 'next/link'
