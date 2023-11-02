@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  box-sizing: border-box;
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -16,12 +20,22 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.debug {
+  border: 1px solid red;
+}
+
+.navbar-item {
+  @apply flex flex-col justify-center items-center text-yellow text-2xl font-semibold gap-1 px-8 hover:cursor-pointer;
+}
+
+.arrow-button {
+  @apply bg-white text-3xl flex justify-center items-center hover:cursor-pointer;
+}
+
+.profiles-bar-full {
+  @apply h-1.5 w-1.5 rounded-full bg-dark-gray;
+}
+
+.profiles-bar-empty {
+  @apply h-1.5 w-1.5 rounded-full border border-dark-gray;
 }
