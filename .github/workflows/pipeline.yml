@@ -1,7 +1,8 @@
 name: Pipeline CI/CD
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main
   pull_request:
     types: [opened, synchronize, reopened] # additional types: [closed, ready_for_review, reopened]
 
@@ -21,4 +22,17 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: npm run build --if-present
+  sonarcloud:
+    name: SonarCloud
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis 
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
