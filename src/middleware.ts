@@ -10,6 +10,6 @@ export const config = {
 
 export default withAuth(
   function middleware (req: NextRequest) {
-    console.log('Request path: ', req.nextUrl.pathname)
+    // console.log('Request path: ', req.nextUrl.pathname)
   }
 )

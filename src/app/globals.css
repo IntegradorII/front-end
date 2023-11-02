@@ -20,6 +20,10 @@
   }
 }
 
+body {
+  @apply bg-[#EDEDED];
+}
+
 .debug {
   border: 1px solid red;
 }

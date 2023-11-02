@@ -3,7 +3,7 @@ import { HistoryItem } from '@/components/purchase-history/history-item'
 
 const PurchaseHistory = () => {
   return (
-    <div className='w-full py-7 px-4 flex flex-col gap-4'>
+    <div className='w-full py-7 flex flex-col gap-4'>
       <span className='font-bold'>Histórico de compras</span>
       <HistoryItem imagePath='/images/ProfilePhoto.png' productName='Loción para mascotas (hembras)' purchaseDate='24 de septiembre de 2022' price='$22.990'/>
       <HorizontalSeparator percentage={100}/>
