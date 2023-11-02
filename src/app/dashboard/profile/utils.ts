@@ -48,12 +48,12 @@ export const kidProfiles: KidProfile[] = [
     profileType: 'kid',
     firstName: 'Juanita',
     lastName: 'Perez',
-    gender: 'Masculino',
+    gender: 'Femenino',
     birthDate: '01/01/2010',
-    topSize: 'M',
-    bottomSize: 'M',
+    topSize: 'S',
+    bottomSize: 'S',
     shoeSize: '38',
-    image: '/images/img-no-disponible.png'
+    image: '/images/ProfilePhoto.png'
   }
 ]
 
@@ -75,15 +75,15 @@ export const saleItems: SaleItem[] = [
   {
     id: 'cx1',
     name: 'Camisa de cuadros',
-    image: '/images/img-no-disponible.png',
+    image: '/images/prod1.png',
     profileId: 'ax1'
   },
-  // {
-  //   id: 'cx2',
-  //   name: 'Camisa de cuadros',
-  //   image: '/images/img-no-disponible.png',
-  //   profileId: 'ax1'
-  // },
+  {
+    id: 'cx2',
+    name: 'Pantalones',
+    image: '/images/prod2.png',
+    profileId: 'ax1'
+  }
   // {
   //   id: 'cx3',
   //   name: 'Camisa de cuadros',
@@ -101,37 +101,7 @@ export const saleItems: SaleItem[] = [
   //   name: 'Camisa de cuadros',
   //   image: '/images/img-no-disponible.png',
   //   profileId: 'ax1'
-  // },
-  {
-    id: 'cx6',
-    name: 'Camisa de cuadros',
-    image: '/images/img-no-disponible.png',
-    profileId: 'ax1'
-  },
-  {
-    id: 'cx7',
-    name: 'Camisa de cuadros',
-    image: '/images/img-no-disponible.png',
-    profileId: 'bx1'
-  },
-  {
-    id: 'cx8',
-    name: 'Camisa de cuadros',
-    image: '/images/img-no-disponible.png',
-    profileId: 'bx1'
-  },
-  {
-    id: 'cx9',
-    name: 'Camisa de cuadros',
-    image: '/images/img-no-disponible.png',
-    profileId: 'bx1'
-  },
-  {
-    id: 'cx10',
-    name: 'Camisa de cuadros',
-    image: '/images/img-no-disponible.pngg',
-    profileId: 'bx1'
-  }
+  // }
 ]
 
 export const getKidProfile = async (id: string) => {

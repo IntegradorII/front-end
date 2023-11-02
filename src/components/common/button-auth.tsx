@@ -9,7 +9,7 @@ export function ButtonAuth () {
   const { data: session, status } = useSession()
   const router = useRouter()
 
-  console.log({ session, status })
+  // console.log({ session, status })
 
   const handleClick = async () => {
     if (session) {

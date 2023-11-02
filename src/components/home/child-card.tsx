@@ -1,5 +1,3 @@
-'use client'
-
 import Image from 'next/image'
 import { VerticalSeparator } from '../common/vertical-separator'
 import { LiaBirthdayCakeSolid } from 'react-icons/lia'

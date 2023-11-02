@@ -7,31 +7,31 @@ interface SuggestedProps {
 
 const Recommended = ({ title }: (SuggestedProps)) => {
   return (
-    <div className="w-full flex flex-col font-bold gap-4">
+    <div className="w-full flex flex-col font-bold gap-4 pl-7">
       {title}
-      <div className="max-w-full overflow-hidden h-[9.5rem] flex justify-between bg-white rounded-lg">
+      <div className="w-full h-[9.3rem] overflow-hidden flex justify-between bg-white rounded-lg">
         <div className='arrow-button rounded-2xl px-3'>
           <SlArrowLeft/>
         </div>
-        <div className='flex w-full h-full gap-1 overflow-x-auto'>
+        <div className='flex w-full h-full gap-1'>
           <VerticalSeparator percentage={100}/>
-          <div className='h-full aspect-square'>
+          <div className='h-full aspect-square p-2'>
             <div className='h-full w-full bg-teal-200'></div>
           </div>
           <VerticalSeparator percentage={100}/>
-          <div className='h-full aspect-square'>
+          <div className='h-full aspect-square p-2'>
             <div className='h-full w-full bg-teal-200'></div>
           </div>
           <VerticalSeparator percentage={100}/>
-          <div className='h-full aspect-square'>
+          <div className='h-full aspect-square p-2'>
             <div className='h-full w-full bg-teal-200'></div>
           </div>
           <VerticalSeparator percentage={100}/>
-          <div className='h-full aspect-square'>
+          <div className='h-full aspect-square p-2'>
             <div className='h-full w-full bg-teal-200'></div>
           </div>
           <VerticalSeparator percentage={100}/>
-          <div className='h-full aspect-square'>
+          <div className='h-full aspect-square p-2'>
             <div className='h-full w-full bg-teal-200'></div>
           </div>
           <VerticalSeparator percentage={100}/>
