@@ -7,7 +7,7 @@ import { SlArrowLeft, SlArrowRight } from 'react-icons/sl'
 
 const Home = () => {
   return (
-    <div className='w-full py-7 flex flex-col gap-7'>
+    <div className='debug w-full flex flex-col gap-7'>
       <div className='flex justify-between items-start gap-7 px-7'>
         <div className='flex flex-col items-center justify-center gap-4'>
           <div className='flex items-center justify-center gap-8'>
@@ -27,9 +27,13 @@ const Home = () => {
         </div>
       </div>
       <HorizontalSeparator percentage={100}/>
-      <Recommended title='Prendas para ser cool'/>
+      <div className='flex flex-col px-10'>
+        <Recommended title='Prendas para ser cool'/>
+      </div>
       <HorizontalSeparator percentage={100}/>
-      <Recommended title='Accesorios para mascotas'/>
+      <div className='flex flex-col px-10'>
+        <Recommended title='Accesorios para mascotas'/>
+      </div>
     </div>
   )
 }

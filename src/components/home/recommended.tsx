@@ -7,7 +7,7 @@ interface SuggestedProps {
 
 const Recommended = ({ title }: (SuggestedProps)) => {
   return (
-    <div className="w-full flex flex-col font-bold gap-4 pl-7">
+    <div className="w-full flex flex-col font-bold gap-4">
       {title}
       <div className="w-full h-[9.3rem] overflow-hidden flex justify-between bg-white rounded-lg">
         <div className='arrow-button rounded-2xl px-3'>

@@ -6,9 +6,9 @@ interface DashboardLayoutProps {
 
 export default function DashboardLayout ({ children }: DashboardLayoutProps) {
   return (
-    <section className="w-full h-full flex items-start justify-center px-3">
+    <section className="w-full h-full flex px-3">
       <SideBar />
-      <main className="flex items-center justify-center gap-5 h-full w-full pb-6 px-5 border-l-[1px] border-separator-gray">
+      <main className="w-[75%] ml-[25%] flex items-center justify-center h-full py-10 px-7">
         {children}
       </main>
     </section>
