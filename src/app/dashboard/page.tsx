@@ -7,14 +7,14 @@ import { SlArrowLeft, SlArrowRight } from 'react-icons/sl'
 
 const Home = () => {
   return (
-    <div className='debug w-full flex flex-col gap-7'>
-      <div className='flex justify-between items-start gap-7 px-7'>
+    <section className='w-full flex flex-col gap-7'>
+      <div className='flex justify-between items-start gap-7'>
         <div className='flex flex-col items-center justify-center gap-4'>
           <div className='flex items-center justify-center gap-8'>
             <button className='arrow-button rounded-full p-3'>
               <SlArrowLeft/>
             </button>
-            <ChildCard imagePath='/images/ProfilePhoto.png' rship='Hijo' name='Pepito' birthDay='19 de febrero'/>
+            <ChildCard imagePath='/images/profile.png' rship='Hijo' name='Pepito' birthDay='19 de febrero'/>
             <button className='arrow-button rounded-full p-3'>
               <SlArrowRight/>
             </button>
@@ -27,14 +27,14 @@ const Home = () => {
         </div>
       </div>
       <HorizontalSeparator percentage={100}/>
-      <div className='flex flex-col px-10'>
+      <div className='flex flex-col'>
         <Recommended title='Prendas para ser cool'/>
       </div>
       <HorizontalSeparator percentage={100}/>
-      <div className='flex flex-col px-10'>
+      <div className='flex flex-col'>
         <Recommended title='Accesorios para mascotas'/>
       </div>
-    </div>
+    </section>
   )
 }
 

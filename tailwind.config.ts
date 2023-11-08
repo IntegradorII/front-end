@@ -21,7 +21,7 @@ const config: Config = {
         'medium-gray': '#444646',
         'dark-gray': '#1d1d1e',
         'separator-gray': '#d9d9d9',
-        'yellow': '#ffbd00',
+        'yellow': '#ffdb00',
         'secondary-text': '#444647',
         'light-text': '#a1a2a2'
       }

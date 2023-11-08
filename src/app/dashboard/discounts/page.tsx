@@ -48,7 +48,7 @@ const discounts: Discount[] = [
 
 const Discounts = () => {
   return (
-    <section className="flex flex-col gap-4">
+    <section className="debug flex flex-col gap-4">
       <span className='font-bold'>Mis descuentos</span>
       <div className='flex flex-col gap-8'>
         {discounts.map(discount => (
