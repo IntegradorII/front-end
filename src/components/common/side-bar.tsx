@@ -25,7 +25,7 @@ const SideBar = () => {
                 <PiStarDuotone/>
               </div>
               <div className='w-full'>
-                <PercentageBar percentage={50}/>
+                <PercentageBar percentage={70}/>
               </div>
               <div className='text-yellow text-lg'>
                 <BsFillStarFill/>
@@ -34,13 +34,13 @@ const SideBar = () => {
           </div>
           <div className='flex flex-col items-center text-center bg-medium-gray rounded-xl font-semibold text-white px-10 py-1 my-4'>
             <div className='flex gap-1'>
-              <p>Eres</p>
-              <p className='text-yellow'>star</p>
+              <span>Eres</span>
+              <span className='text-yellow'>Star</span>
             </div>
-            <p>Te faltan 300 puntos</p>
+            <span>Te faltan 300 puntos</span>
             <div className='flex gap-1'>
-              <p>para ser</p>
-              <p className='text-yellow'>coolstar</p>
+              <span>para ser</span>
+              <span className='text-yellow'>CoolStar</span>
             </div>
           </div>
           <div className='flex flex-col items-center font-bold w-full text-center'>
