@@ -50,8 +50,8 @@ const SideBar = () => {
             {/* <span className='w-full py-2 hover:cursor-pointer'>Histórico de compras</span> */}
             <Link href='/dashboard/purchase-history' className={`w-full py-2 rounded-full ${pathname === '/dashboard/purchase-history' ? 'bg-separator-gray' : ''}`}>Histórico de compras</Link>
             <HorizontalSeparator percentage={100}/>
-            <span className='w-full py-2 hover:cursor-pointer'>Beneficios por segmento</span>
-            {/* <Link href='/dashboard/benefits' className={`w-full py-2 rounded-md ${pathname === '/dashboard/benefits' ? 'bg-gray-300' : ''}`}>Beneficios por segmento</Link> */}
+            {/* <span className='w-full py-2 hover:cursor-pointer'>Beneficios por segmento</span> */}
+            <Link href='/dashboard/benefits' className={`w-full py-2 rounded-full ${pathname === '/dashboard/benefits' ? 'bg-separator-gray' : ''}`}>Beneficios por segmento</Link>
             <HorizontalSeparator percentage={100}/>
             {/* <span className='w-full py-2 hover:cursor-pointer'>Mis descuentos</span> */}
             <Link href='/dashboard/discounts' className={`w-full py-2 rounded-full ${pathname === '/dashboard/discounts' ? 'bg-separator-gray' : ''}`}>Mis descuentos</Link>
