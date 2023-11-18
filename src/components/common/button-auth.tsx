@@ -47,7 +47,7 @@ export function ButtonAuth () {
             <TbLogout/>
             <span className='text-sm'>Salir</span>
           </div>
-          : 'Iniciar Sesion'}
+          : ''}
       </button>
     </div>
   )
