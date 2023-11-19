@@ -10,6 +10,12 @@ import {
 interface LoginContextProps {
   openModalLogin: boolean
   setOpenModalLogin: Dispatch<SetStateAction<boolean>>
+  openModalPassword: boolean
+  setOpenModalPassword: Dispatch<SetStateAction<boolean>>
+  openIdSignUpModal: boolean
+  setOpenIdSignUpModal: Dispatch<SetStateAction<boolean>>
+  openSignUpModal: boolean
+  setOpenSignUpModal: Dispatch<SetStateAction<boolean>>
 }
 
 const LoginContext = createContext<LoginContextProps>(
@@ -27,11 +33,20 @@ const LoginContextProvider = ({
   children
 }: LoginContextProviderProps) => {
   const [openModalLogin, setOpenModalLogin] = useState<boolean>(false)
+  const [openModalPassword, setOpenModalPassword] = useState<boolean>(false)
+  const [openIdSignUpModal, setOpenIdSignUpModal] = useState<boolean>(false)
+  const [openSignUpModal, setOpenSignUpModal] = useState<boolean>(false)
   return (
     <LoginContext.Provider
       value={{
         openModalLogin,
-        setOpenModalLogin
+        setOpenModalLogin,
+        openModalPassword,
+        setOpenModalPassword,
+        openIdSignUpModal,
+        setOpenIdSignUpModal,
+        openSignUpModal,
+        setOpenSignUpModal
       }}
     >
       {children}

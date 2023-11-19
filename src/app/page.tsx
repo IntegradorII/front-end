@@ -1,11 +1,22 @@
+import { ForgotPasswordModal } from '@/components/Modals/ForgotPasswordModal'
+import { IdSignUpModal } from '@/components/Modals/IdSignUpModal'
 import { LoginModal } from '@/components/Modals/LoginModal'
-import Image from 'next/image'
-export default function App () {
-  return (
-    <main className="flex flex-col items-center gap-5 p-2 h-screen relative">
-      <Image src='/images/Background.png' alt='background' fill={true}/>
+import { SignUpModal } from '@/components/Modals/SingUpModal'
 
-      <LoginModal/>
+export default function App() {
+  return (
+    <main
+      style={{
+        backgroundImage: 'url("/images/bg1.jpeg")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+      className="flex flex-col items-center gap-5 p-2 h-screen"
+    >
+      <LoginModal />
+      <ForgotPasswordModal />
+      <IdSignUpModal />
+      <SignUpModal />
     </main>
-  )
+  );
 }
