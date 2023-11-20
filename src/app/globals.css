@@ -28,8 +28,8 @@ body {
   border: 1px solid red;
 }
 
-.navbar-item {
-  @apply flex flex-col justify-center items-center text-yellow text-2xl font-semibold gap-1 px-8 hover:cursor-pointer;
+.actual-page {
+  @apply bg-separator-gray border-4 border-white;
 }
 
 .arrow-button {
@@ -42,4 +42,16 @@ body {
 
 .profiles-bar-empty {
   @apply h-1.5 w-1.5 rounded-full border border-dark-gray;
+}
+
+.benefits-col-center {
+  @apply w-full h-full pt-2 text-white px-5 py-1 border-l border-separator-gray;
+}
+
+.benefits-item-center {
+  @apply px-5 py-1 flex items-center justify-center;
+}
+
+.benefits-item-left {
+  @apply py-1 px-5 flex items-center justify-start;
 }

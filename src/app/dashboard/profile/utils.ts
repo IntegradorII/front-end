@@ -25,9 +25,12 @@ export interface KidProfile {
   gender: string
   birthDate: string
   topSize: string
-  bottomSize: string
-  shoeSize: string
-  image: string
+  lowerSize: string
+  shoesSize: string
+  profileImg: string
+  topSizeImg: string
+  lowerSizeImg: string
+  shoesSizeImg: string
 }
 
 export interface PetProfile {
@@ -46,14 +49,17 @@ export const kidProfiles: KidProfile[] = [
   {
     id: 'ax1',
     profileType: 'kid',
-    firstName: 'Juanita',
+    firstName: 'Pepito',
     lastName: 'Perez',
     gender: 'Femenino',
     birthDate: '01/01/2010',
-    topSize: 'S',
-    bottomSize: 'S',
-    shoeSize: '38',
-    image: '/images/ProfilePhoto.png'
+    topSize: 'Talla 10',
+    lowerSize: 'Talla 10',
+    shoesSize: 'Talla 30',
+    profileImg: '/images/profile.png',
+    topSizeImg: '/images/top-size.png',
+    lowerSizeImg: '/images/lower-size.png',
+    shoesSizeImg: '/images/shoes-size.png'
   }
 ]
 
@@ -75,13 +81,13 @@ export const saleItems: SaleItem[] = [
   {
     id: 'cx1',
     name: 'Camisa de cuadros',
-    image: '/images/prod1.png',
+    image: '/images/photo-child-3.png',
     profileId: 'ax1'
   },
   {
     id: 'cx2',
     name: 'Pantalones',
-    image: '/images/prod2.png',
+    image: '/images/photo-child-5.png',
     profileId: 'ax1'
   }
   // {

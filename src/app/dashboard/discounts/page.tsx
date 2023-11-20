@@ -46,12 +46,17 @@ const discounts: Discount[] = [
   }
 ]
 
-export default function Discounts () {
+const Discounts = () => {
   return (
-    <section className="flex flex-col items-center gap-6 py-7">
-      {discounts.map(discount => (
-        <DiscountCard key={discount.id} discount={discount} />
-      ))}
+    <section className="flex flex-col gap-4">
+      <span className='font-bold'>Mis descuentos</span>
+      <div className='flex flex-col gap-8'>
+        {discounts.map(discount => (
+          <DiscountCard key={discount.id} discount={discount} />
+        ))}
+      </div>
     </section>
   )
 }
+
+export default Discounts

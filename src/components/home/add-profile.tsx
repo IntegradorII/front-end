@@ -1,15 +1,17 @@
-import { GrAddCircle } from 'react-icons/gr'
 import { Button } from '@/components/common/add-button'
+import { MdOutlinePets } from 'react-icons/md'
+import type { IconType } from 'react-icons'
 
 interface AddProfileProps {
   text: string
+  Icon: IconType
 }
 
-const AddProfile = ({ text }: (AddProfileProps)) => {
+const AddProfile = ({ text, Icon }: (AddProfileProps)) => {
   return (
     <div className='flex items-center text-dark-gray gap-6'>
       <div className='text-4xl'>
-        <GrAddCircle/>
+        <Icon></Icon>
       </div>
       <Button text={text}/>
     </div>

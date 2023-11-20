@@ -4,6 +4,7 @@ import { signIn, signOut, useSession } from 'next-auth/react'
 import { FaUser } from 'react-icons/fa'
 import { TbLogout } from 'react-icons/tb'
 import { useRouter } from 'next/navigation'
+import Link from 'next/link'
 
 export function ButtonAuth () {
   const { data: session, status } = useSession()
@@ -33,8 +34,10 @@ export function ButtonAuth () {
     <div className="flex items-center justify-center px-2">
       {session && (
         <div className='navbar-item'>
-          <FaUser/>
-          <span className='text-sm'>Juanita</span>
+          <Link href='/dashboard/user-profile' className='flex flex-col justify-center items-center text-yellow text-2xl font-semibold gap-1 px-8'>
+            <FaUser/>
+            <span className='text-sm'>Juanita</span>
+          </Link>
         </div>
       )}
       <button
@@ -43,7 +46,7 @@ export function ButtonAuth () {
         className={`${status === 'loading' ? 'opacity-50 pointer-events-none' : ''}`}
       >
         {session
-          ? <div className='navbar-item'>
+          ? <div className='flex flex-col justify-center items-center text-yellow text-2xl font-semibold gap-1 px-8 hover:cursor-pointer'>
             <TbLogout/>
             <span className='text-sm'>Salir</span>
           </div>

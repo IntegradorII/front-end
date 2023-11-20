@@ -24,7 +24,7 @@ export default async function RootLayout ({ children }: RootLayoutProps) {
   return (
     <html lang="es">
       <head>
-        <title>OFFCORS</title>
+        <title>OFFCORSS</title>
       </head>
       <body className={inter.className}>
         <SessionAuthProvider session={session}>
