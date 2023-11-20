@@ -34,7 +34,7 @@ export function ButtonAuth () {
     <div className="flex items-center justify-center px-2">
       {session && (
         <div className='navbar-item'>
-          <Link href='/dashboard/user-profile' className='flex flex-col justify-center items-center text-yellow text-2xl font-semibold gap-1 px-8 hover:cursor-pointer'>
+          <Link href='/dashboard/user-profile' className='flex flex-col justify-center items-center text-yellow text-2xl font-semibold gap-1 px-8'>
             <FaUser/>
             <span className='text-sm'>Juanita</span>
           </Link>

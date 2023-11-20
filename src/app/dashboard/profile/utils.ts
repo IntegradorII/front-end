@@ -81,13 +81,13 @@ export const saleItems: SaleItem[] = [
   {
     id: 'cx1',
     name: 'Camisa de cuadros',
-    image: '/images/prod1.png',
+    image: '/images/photo-child-3.png',
     profileId: 'ax1'
   },
   {
     id: 'cx2',
     name: 'Pantalones',
-    image: '/images/prod2.png',
+    image: '/images/photo-child-5.png',
     profileId: 'ax1'
   }
   // {
