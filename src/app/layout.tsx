@@ -29,8 +29,12 @@ export default async function RootLayout ({ children }: RootLayoutProps) {
       <body className={inter.className}>
         <SessionAuthProvider session={session}>
           <LoginContextProvider>
-            <section className="min-h-screen w-full">
-              <div className='w-full min-h-[calc(100vh-2.75rem)]'>
+            <section style={{
+              gridTemplateAreas: '"header header" "sidebar main" "footer footer"',
+              gridTemplateRows: 'auto 1fr auto',
+              gridTemplateColumns: 'auto 1fr'
+            }} className="min-h-screen w-full">
+              <div className='w-full'>
                 <Header />
                 {children}
               </div>

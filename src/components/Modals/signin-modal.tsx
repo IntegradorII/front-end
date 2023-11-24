@@ -1,21 +1,31 @@
-"use client";
-import { useLoginContext } from "@/context/LoginContext";
-import React from "react";
-import { Modal } from "./Modal";
+'use client'
+import { useLoginContext } from '@/context/LoginContext'
+import React from 'react'
+import { Modal } from './modal'
+
 const LoginModal = () => {
-  const { openModalLogin, setOpenModalLogin } = useLoginContext();
-  const { setOpenModalPassword } = useLoginContext();
-  const { setOpenIdSignUpModal } = useLoginContext();
+  const {
+    openModalLogin,
+    setOpenModalLogin,
+    setOpenModalPassword,
+    setOpenIdSignUpModal,
+    handleLogin
+  } = useLoginContext()
 
   const handlePasswordClick = () => {
-    setOpenModalLogin(false);
-    setOpenModalPassword(true);
-  };
+    setOpenModalLogin(false)
+    setOpenModalPassword(true)
+  }
 
   const handleSignUpClick = () => {
-    setOpenModalLogin(false);
-    setOpenIdSignUpModal(true);
-  };
+    setOpenModalLogin(false)
+    setOpenIdSignUpModal(true)
+  }
+
+  const handleLoginClick = (even) => {
+    even.preventDefault()
+    handleLogin({ email: 'user0@mail.com', password: '1234567' })
+  }
 
   return (
     <Modal
@@ -43,7 +53,7 @@ const LoginModal = () => {
               id="password"
             />
           </label>
-          <button className="w-40 bg-yellow hover:bg-yellow-dark text-black hover:text-white font-bold py-2 px-4 rounded-3xl">
+          <button onClick={handleLoginClick} className="w-40 bg-yellow hover:bg-yellow-dark text-black hover:text-white font-bold py-2 px-4 rounded-3xl">
             Iniciar Sesión
           </button>
           <div
@@ -61,7 +71,7 @@ const LoginModal = () => {
         </form>
       </div>
     </Modal>
-  );
-};
+  )
+}
 
-export { LoginModal };
+export { LoginModal }

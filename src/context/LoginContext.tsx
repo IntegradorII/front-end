@@ -1,4 +1,6 @@
 'use client'
+import { type Session } from 'next-auth'
+import { signIn, signOut, useSession } from 'next-auth/react'
 import {
   type Dispatch,
   type SetStateAction,
@@ -16,6 +18,9 @@ interface LoginContextProps {
   setOpenIdSignUpModal: Dispatch<SetStateAction<boolean>>
   openSignUpModal: boolean
   setOpenSignUpModal: Dispatch<SetStateAction<boolean>>
+  dataSession: { session: Session | null, status: 'authenticated' | 'loading' | 'unauthenticated' }
+  handleLogin: (data: LoginData) => void
+  handleLogout: () => void
 }
 
 const LoginContext = createContext<LoginContextProps>(
@@ -29,6 +34,11 @@ interface LoginContextProviderProps {
   children: JSX.Element
 }
 
+interface LoginData {
+  email: string
+  password: string
+}
+
 const LoginContextProvider = ({
   children
 }: LoginContextProviderProps) => {
@@ -36,6 +46,28 @@ const LoginContextProvider = ({
   const [openModalPassword, setOpenModalPassword] = useState<boolean>(false)
   const [openIdSignUpModal, setOpenIdSignUpModal] = useState<boolean>(false)
   const [openSignUpModal, setOpenSignUpModal] = useState<boolean>(false)
+  const { data: session, status } = useSession()
+  const dataSession = { session, status }
+  const handleLogin = (data: LoginData) => {
+    signIn('credentials', {
+      redirect: false,
+      email: data.email,
+      password: data.password
+    }).then((res) => {
+      console.log('login', res)
+      console.log(res?.error)
+      // eslint-disable-next-line @typescript-eslint/no-confusing-void-expression
+      // router.push('/dashboard')
+      // setOpenModalLogin(false)
+    }).catch((err) => {
+      console.error(err)
+    })
+  }
+  const handleLogout = () => {
+    signOut({ redirect: true, callbackUrl: '/' }).catch((err) => {
+      console.error(err)
+    })
+  }
   return (
     <LoginContext.Provider
       value={{
@@ -46,7 +78,10 @@ const LoginContextProvider = ({
         openIdSignUpModal,
         setOpenIdSignUpModal,
         openSignUpModal,
-        setOpenSignUpModal
+        setOpenSignUpModal,
+        dataSession,
+        handleLogin,
+        handleLogout
       }}
     >
       {children}

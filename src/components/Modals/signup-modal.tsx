@@ -1,9 +1,9 @@
-"use client";
-import React from "react";
-import { Modal } from "./Modal";
-import { useLoginContext } from "@/context/LoginContext";
+'use client'
+import React from 'react'
+import { Modal } from './modal'
+import { useLoginContext } from '@/context/LoginContext'
 const SignUpModal = () => {
-  const { openSignUpModal, setOpenSignUpModal } = useLoginContext();
+  const { openSignUpModal, setOpenSignUpModal } = useLoginContext()
 
   return (
     <Modal open={openSignUpModal} setOpen={setOpenSignUpModal} title="REGISTRO">
@@ -86,4 +86,4 @@ const SignUpModal = () => {
   )
 }
 
-export { SignUpModal };
+export { SignUpModal }

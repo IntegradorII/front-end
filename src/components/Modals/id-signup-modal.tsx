@@ -1,15 +1,15 @@
-"use client";
-import React from "react";
-import { Modal } from "./Modal";
-import { useLoginContext } from "@/context/LoginContext";
+'use client'
+import React from 'react'
+import { Modal } from './modal'
+import { useLoginContext } from '@/context/LoginContext'
 const IdSignUpModal = () => {
-  const { openIdSignUpModal, setOpenIdSignUpModal } = useLoginContext();
-  const { setOpenSignUpModal } = useLoginContext();
+  const { openIdSignUpModal, setOpenIdSignUpModal } = useLoginContext()
+  const { setOpenSignUpModal } = useLoginContext()
 
   const handleContinueClick = () => {
-    setOpenIdSignUpModal(false);
-    setOpenSignUpModal(true);
-  };
+    setOpenIdSignUpModal(false)
+    setOpenSignUpModal(true)
+  }
 
   return (
     <Modal
@@ -52,7 +52,7 @@ const IdSignUpModal = () => {
         </form>
       </div>
     </Modal>
-  );
-};
+  )
+}
 
-export { IdSignUpModal };
+export { IdSignUpModal }
