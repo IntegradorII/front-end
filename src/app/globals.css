@@ -44,14 +44,18 @@ body {
   @apply h-1.5 w-1.5 rounded-full border border-dark-gray;
 }
 
-.benefits-col-center {
-  @apply w-full h-full pt-2 text-white px-5 py-1 border-l border-separator-gray;
+.table-border {
+  @apply border-t border-l border-separator-gray;
 }
 
-.benefits-item-center {
-  @apply px-5 py-1 flex items-center justify-center;
+.table-title {
+  @apply border-l border-separator-gray w-[12.5%];
 }
 
-.benefits-item-left {
-  @apply py-1 px-5 flex items-center justify-start;
+.table-description {
+  @apply pl-4 text-start border-t py-1.5;
+}
+
+.table-selected {
+  @apply border border-black bg-yellow;
 }

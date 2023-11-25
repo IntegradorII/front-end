@@ -2,95 +2,159 @@ import { TbChecks } from 'react-icons/tb'
 
 const Benefits = () => {
   return (
-    <section className='w-full h-full flex flex-col items-start justify-start gap-8 bg-slate-300'>
-      <h2 className='font-bold'>Beneficios por segmento</h2>
-      <table className="w-full h-[90%] rounded-3xl items-center justify-between">
-        <thead className="w-full bg-white rounded-t-3xl pt-2">
+    <section className='w-full h-full flex flex-col gap-4'>
+      <span className='font-bold'>Beneficios por segmento</span>
+      <table className='w-full bg-white  rounded-3xl'>
+        <thead>
           <tr>
-            <th className="font-bold">Beneficios</th>
-            <th>RockStar</th>
-            <th>CoolStar</th>
-            <th className='bg-slate-400'>Star</th>
-            <th>New Talent</th>
+            <th className='w-[50%] pl-4 text-start py-1.5'>Beneficios</th>
+            <th className='table-title'>RockStar</th>
+            <th className='table-title'>CoolStar</th>
+            <th className='table-selected w-[12.5%]'>Star</th>
+            <th className='table-title'>New Talent</th>
           </tr>
         </thead>
-        <tbody className="bg-white border-t border-separator-gray">
-          <tr>
-            <td className='border text-center'>Descuento de cumpleaños</td>
-            <td className='border text-center'>25%</td>
-            <td className='border text-center'>20%</td>
-            <td className='border text-center bg-slate-400'>20%</td>
-            <td className='border text-center'>20%</td>
+        <tbody>
+          <tr className='py-2 text-center'>
+            <td className='table-description'>Descuento de cumpleaños</td>
+            <td className='table-border'>25%</td>
+            <td className='table-border'>20%</td>
+            <td className='table-selected'>20%</td>
+            <td className='table-border'>20%</td>
           </tr>
           <tr>
-            <td className='border text-center'>Descuentos exclusivos</td>
-            <td className='border text-center'><TbChecks /></td>
-            <td className='border text-center'><TbChecks /></td>
-            <td className='border text-center bg-slate-400'><TbChecks /></td>
-            <td className='border text-center'></td>
+            <td className='table-description'>Descuentos exclusivos</td>
+            <td className='table-border'>
+              <div className='flex justify-center items-center'>
+                <TbChecks />
+              </div>
+            </td>
+            <td className='table-border'>
+              <div className='flex justify-center items-center'>
+                <TbChecks />
+              </div>
+            </td>
+            <td className='table-selected'>
+              <div className='flex justify-center items-center'>
+                <TbChecks />
+              </div>
+            </td>
+            <td className='table-border'></td>
           </tr>
           <tr>
-            <td className='border text-center'>Beneficios marcas aliadas</td>
-            <td className='border text-center'><TbChecks /></td>
-            <td className='border text-center'><TbChecks /></td>
-            <td className='border text-center bg-slate-400'><TbChecks /></td>
-            <td className='border text-center'></td>
+            <td className='table-description'>Beneficios marcas aliadas</td>
+            <td className='table-border'>
+              <div className='flex justify-center items-center'>
+                <TbChecks />
+              </div>
+            </td>
+            <td className='table-border'>
+              <div className='flex justify-center items-center'>
+                <TbChecks />
+              </div>
+            </td>
+            <td className='table-selected'>
+              <div className='flex justify-center items-center'>
+                <TbChecks />
+              </div>
+            </td>
+            <td className='table-border'></td>
           </tr>
           <tr>
-            <td className='border text-center'>Tres envíos gratis al año</td>
-            <td className='border text-center'><TbChecks /></td>
-            <td className='border text-center'><TbChecks /></td>
-            <td className='border text-center bg-slate-400'></td>
-            <td className='border text-center'></td>
+            <td className='table-description'>Tres envíos gratis al año</td>
+            <td className='table-border'>
+              <div className='flex justify-center items-center'>
+                <TbChecks />
+              </div>
+            </td>
+            <td className='table-border'>
+              <div className='flex justify-center items-center'>
+                <TbChecks />
+              </div>
+            </td>
+            <td className='table-selected'></td>
+            <td className='table-border'></td>
           </tr>
           <tr>
-            <td className='border text-center'>Comunicación personalizada</td>
-            <td className='border text-center'><TbChecks /></td>
-            <td className='border text-center'><TbChecks /></td>
-            <td className='border text-center bg-slate-400'></td>
-            <td className='border text-center'></td>
+            <td className='table-description'>Comunicación personalizada</td>
+            <td className='table-border'>
+              <div className='flex justify-center items-center'>
+                <TbChecks />
+              </div>
+            </td>
+            <td className='table-border'>
+              <div className='flex justify-center items-center'>
+                <TbChecks />
+              </div>
+            </td>
+            <td className='table-selected'></td>
+            <td className='table-border'></td>
           </tr>
           <tr>
-            <td className='border text-center'>Compra asistida por televentas</td>
-            <td className='border text-center'><TbChecks /></td>
-            <td className='border text-center'></td>
-            <td className='border text-center bg-slate-400'></td>
-            <td className='border text-center'></td>
+            <td className='table-description'>Compra asistida por televentas</td>
+            <td className='table-border'>
+              <div className='flex justify-center items-center'>
+                <TbChecks />
+              </div>
+            </td>
+            <td className='table-border'></td>
+            <td className='table-selected'></td>
+            <td className='table-border'></td>
           </tr>
           <tr>
-            <td className='border text-center'>Regalable cumpleaños</td>
-            <td className='border text-center'><TbChecks /></td>
-            <td className='border text-center'></td>
-            <td className='border text-center bg-slate-400'></td>
-            <td className='border text-center'></td>
+            <td className='table-description'>Regalable cumpleaños</td>
+            <td className='table-border'>
+              <div className='flex justify-center items-center'>
+                <TbChecks />
+              </div>
+            </td>
+            <td className='table-border'></td>
+            <td className='table-selected'></td>
+            <td className='table-border'></td>
           </tr>
           <tr>
-            <td className='border text-center'>Despacho express</td>
-            <td className='border text-center'><TbChecks /></td>
-            <td className='border text-center'></td>
-            <td className='border text-center bg-slate-400'></td>
-            <td className='border text-center'></td>
+            <td className='table-description'>Despacho express</td>
+            <td className='table-border'>
+              <div className='flex justify-center items-center'>
+                <TbChecks />
+              </div>
+            </td>
+            <td className='table-border'></td>
+            <td className='table-selected'></td>
+            <td className='table-border'></td>
           </tr>
           <tr>
-            <td className='border text-center'>Atención prioritaria línea de atención</td>
-            <td className='border text-center'><TbChecks /></td>
-            <td className='border text-center'></td>
-            <td className='border text-center bg-slate-400'></td>
-            <td className='border text-center'></td>
+            <td className='table-description'>Atención prioritaria línea de atención</td>
+            <td className='table-border'>
+              <div className='flex justify-center items-center'>
+                <TbChecks />
+              </div>
+            </td>
+            <td className='table-border'></td>
+            <td className='table-selected'></td>
+            <td className='table-border'></td>
           </tr>
           <tr>
-            <td className='border text-center'>Ingreso anticipado a eventos online</td>
-            <td className='border text-center'><TbChecks /></td>
-            <td className='border text-center'></td>
-            <td className='border text-center bg-slate-400'></td>
-            <td className='border text-center'></td>
+            <td className='pl-4 text-start border-t py-1.5'>Ingreso anticipado a eventos online</td>
+            <td className='table-border'>
+              <div className='flex justify-center items-center'>
+                <TbChecks />
+              </div>
+            </td>
+            <td className='table-border'></td>
+            <td className='table-selected'></td>
+            <td className='table-border'></td>
           </tr>
           <tr>
-            <td className='border text-center'>Eventos exclusivos</td>
-            <td className='border text-center'><TbChecks /></td>
-            <td className='border text-center'></td>
-            <td className='border text-center bg-slate-400'></td>
-            <td className='border text-center'></td>
+            <td className='pl-4 text-start border-t py-1.5'>Eventos exclusivos</td>
+            <td className='table-border'>
+              <div className='flex justify-center items-center'>
+                <TbChecks />
+              </div>
+            </td>
+            <td className='table-border'></td>
+            <td className='table-selected'></td>
+            <td className='table-border'></td>
           </tr>
         </tbody>
       </table>
