@@ -7,7 +7,7 @@ export interface JwtPayload {
 }
 
 export const signJwt = async (payload: JwtPayload, expiresIn = '1d') => {
-  const token = await jwt.sign(payload, process.env.APP_JWT_SECRET ?? '', {
+  const token = jwt.sign(payload, process.env.APP_JWT_SECRET ?? '', {
     algorithm: 'HS512',
     expiresIn
   })
