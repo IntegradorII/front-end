@@ -11,8 +11,8 @@ export const config = {
 export default withAuth(
   function middleware (req: NextRequestWithAuth) {
     if (req.nextUrl.pathname.startsWith('/dashboard')) {
-      console.log('dashboard middleware')
-      console.log(req.nextauth)
+      // console.log('dashboard middleware')
+      // console.log(req.nextauth)
     }
   }
 )

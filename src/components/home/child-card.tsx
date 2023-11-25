@@ -12,7 +12,7 @@ interface ChildCardProps {
 
 const ChildCard = ({ imagePath, rship, name, birthDay }: (ChildCardProps)) => {
   return (
-    <Link href='/dashboard/profile/ax1' className="flex bg-white rounded-xl py-3">
+    <Link href='#' className="flex bg-white rounded-xl py-3">
       <div className='px-6'>
         <Image src={imagePath} alt="Foto de perfil" width={90} height={90} className='rounded-full'/>
       </div>

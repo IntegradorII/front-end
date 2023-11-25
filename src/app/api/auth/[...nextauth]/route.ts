@@ -1,38 +1,43 @@
 import type { GetServerSidePropsContext, NextApiRequest, NextApiResponse } from 'next'
 import NextAuth, { getServerSession } from 'next-auth'
-import CredentialsProvider from 'next-auth/providers/credentials'
+import Aut0Provider from 'next-auth/providers/auth0'
 import type { NextAuthOptions } from 'next-auth'
+import { PrismaAdapter } from '@auth/prisma-adapter'
+import { PrismaClient } from '@prisma/client'
+// import { signJwt } from '@/utils/jwt/jwt'
+
+const prisma = new PrismaClient()
 
 export const authOptions: NextAuthOptions = {
+  adapter: PrismaAdapter(prisma),
   providers: [
-    CredentialsProvider({
-      // The name to display on the sign in form (e.g. "Sign in with...")
-      name: 'Credentials',
-      // `credentials` is used to generate a form on the sign in page.
-      // You can specify which fields should be submitted, by adding keys to the `credentials` object.
-      // e.g. domain, username, password, 2FA token, etc.
-      // You can pass any HTML attribute to the <input> tag through the object.
-      credentials: {
-        email: { label: 'email', type: 'email', placeholder: 'example@mail.com' },
-        password: { label: 'password', type: 'password' }
-      },
-      async authorize (credentials, req) {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/login`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            email: credentials?.email,
-            password: credentials?.password
-          })
-        })
-        const user = await res.json()
-        if (user.error) {
-          throw new Error(user)
-        }
-        return user
-      }
+    Aut0Provider({
+      clientId: process.env.AUTH0_CLIENT_ID ?? '',
+      clientSecret: process.env.AUTH0_CLIENT_SECRET ?? '',
+      issuer: process.env.AUTH0_ISSUER
     })
-  ]
+  ],
+  session: {
+    strategy: 'jwt'
+  },
+  callbacks: {
+    async jwt ({ token }) {
+      // Persist OAuth access_token and or the user id to the token right after signin
+      // const { email, name, picture } = token
+      // const jwtToken = await signJwt({ email, name, image: picture })
+      // const userDB = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/auth0`, {
+      //   method: 'POST',
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //     Authorization: `Bearer ${jwtToken}`
+      //   }
+      // }).then(async res => await res.json())
+      // token.accessToken = jwtToken
+      // token.user = userDB
+      // console.log('jwt', token)
+      return token
+    }
+  }
 }
 
 export async function auth (...args: [GetServerSidePropsContext['req'], GetServerSidePropsContext['res']] | [NextApiRequest, NextApiResponse] | []) {

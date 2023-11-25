@@ -8,8 +8,8 @@ const LoginModal = () => {
     openModalLogin,
     setOpenModalLogin,
     setOpenModalPassword,
-    setOpenIdSignUpModal,
-    handleLogin
+    setOpenIdSignUpModal
+    // handleLogin
   } = useLoginContext()
 
   const handlePasswordClick = () => {
@@ -22,10 +22,10 @@ const LoginModal = () => {
     setOpenIdSignUpModal(true)
   }
 
-  const handleLoginClick = (even) => {
-    even.preventDefault()
-    handleLogin({ email: 'user0@mail.com', password: '1234567' })
-  }
+  // const handleLoginClick = (even) => {
+  //   even.preventDefault()
+  //   handleLogin({ email: 'user0@mail.com', password: '1234567' })
+  // }
 
   return (
     <Modal
@@ -53,7 +53,9 @@ const LoginModal = () => {
               id="password"
             />
           </label>
-          <button onClick={handleLoginClick} className="w-40 bg-yellow hover:bg-yellow-dark text-black hover:text-white font-bold py-2 px-4 rounded-3xl">
+          <button
+            // onClick={handleLoginClick}
+            className="w-40 bg-yellow hover:bg-yellow-dark text-black hover:text-white font-bold py-2 px-4 rounded-3xl">
             Iniciar Sesión
           </button>
           <div

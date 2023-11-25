@@ -8,15 +8,16 @@ import { SignUpModal } from '@/components/modals/signup-modal'
 import { LoginModal } from '@/components/modals/signin-modal'
 import { ForgotPasswordModal } from '@/components/modals/forgot-password-modal'
 import { IdSignUpModal } from '@/components/modals/id-signup-modal'
+import { signIn, signOut } from 'next-auth/react'
 
 export function ButtonAuth () {
   const { dataSession } = useLoginContext()
   const { session } = dataSession
 
   const {
-    setOpenModalLogin,
-    setOpenIdSignUpModal,
-    handleLogout
+    // setOpenModalLogin,
+    setOpenIdSignUpModal
+    // handleLogout
   } = useLoginContext()
 
   return (
@@ -31,7 +32,13 @@ export function ButtonAuth () {
               </Link>
             </div>
             <button
-              onClick={handleLogout}
+              // onClick={handleLogout}
+              onClick={() => {
+                signOut({
+                  redirect: true,
+                  callbackUrl: 'http://localhost:3000/'
+                }).catch(console.error)
+              } }
             >
               <div className='flex flex-col justify-center items-center text-yellow text-2xl font-semibold gap-1 px-8 hover:cursor-pointer'>
                 <TbLogout/>
@@ -43,7 +50,12 @@ export function ButtonAuth () {
           <button onClick={() => { console.log('Alogo'); setOpenIdSignUpModal(true) } } className='w-[150px] bg-yellow hover:bg-yellow-dark text-black hover:text-white font-bold py-2 px-4 rounded-3xl'>
             Regitrarse
           </button>
-          <button onClick={() => { console.log('Alogo'); setOpenModalLogin(true) } } className='w-[150px] bg-yellow hover:bg-yellow-dark text-black hover:text-white font-bold py-2 px-4 rounded-3xl'>
+          <button onClick={() => {
+            signIn('auth0', {
+              redirect: true,
+              callbackUrl: 'http://localhost:3000/dashboard'
+            }).catch(console.error)
+          } } className='w-[150px] bg-yellow hover:bg-yellow-dark text-black hover:text-white font-bold py-2 px-4 rounded-3xl'>
             Iniciar Sesión
           </button>
         </>)
