@@ -55,3 +55,7 @@ body {
 .table-description {
   @apply pl-4 text-start border-t py-1.5;
 }
+
+.table-selected {
+  @apply border border-black bg-yellow;
+}

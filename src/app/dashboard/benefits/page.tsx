@@ -10,7 +10,7 @@ const Benefits = () => {
             <th className='w-[50%] pl-4 text-start py-1.5'>Beneficios</th>
             <th className='table-title'>RockStar</th>
             <th className='table-title'>CoolStar</th>
-            <th className='table-title bg-yellow'>Star</th>
+            <th className='table-selected w-[12.5%]'>Star</th>
             <th className='table-title'>New Talent</th>
           </tr>
         </thead>
@@ -19,7 +19,7 @@ const Benefits = () => {
             <td className='table-description'>Descuento de cumpleaños</td>
             <td className='table-border'>25%</td>
             <td className='table-border'>20%</td>
-            <td className='table-border bg-yellow'>20%</td>
+            <td className='table-selected'>20%</td>
             <td className='table-border'>20%</td>
           </tr>
           <tr>
@@ -34,7 +34,7 @@ const Benefits = () => {
                 <TbChecks />
               </div>
             </td>
-            <td className='table-border bg-yellow'>
+            <td className='table-selected'>
               <div className='flex justify-center items-center'>
                 <TbChecks />
               </div>
@@ -53,7 +53,7 @@ const Benefits = () => {
                 <TbChecks />
               </div>
             </td>
-            <td className='table-border bg-yellow'>
+            <td className='table-selected'>
               <div className='flex justify-center items-center'>
                 <TbChecks />
               </div>
@@ -72,7 +72,7 @@ const Benefits = () => {
                 <TbChecks />
               </div>
             </td>
-            <td className='table-border bg-yellow'></td>
+            <td className='table-selected'></td>
             <td className='table-border'></td>
           </tr>
           <tr>
@@ -87,7 +87,7 @@ const Benefits = () => {
                 <TbChecks />
               </div>
             </td>
-            <td className='table-border bg-yellow'></td>
+            <td className='table-selected'></td>
             <td className='table-border'></td>
           </tr>
           <tr>
@@ -98,7 +98,7 @@ const Benefits = () => {
               </div>
             </td>
             <td className='table-border'></td>
-            <td className='table-border bg-yellow'></td>
+            <td className='table-selected'></td>
             <td className='table-border'></td>
           </tr>
           <tr>
@@ -109,7 +109,7 @@ const Benefits = () => {
               </div>
             </td>
             <td className='table-border'></td>
-            <td className='table-border bg-yellow'></td>
+            <td className='table-selected'></td>
             <td className='table-border'></td>
           </tr>
           <tr>
@@ -120,7 +120,7 @@ const Benefits = () => {
               </div>
             </td>
             <td className='table-border'></td>
-            <td className='table-border bg-yellow'></td>
+            <td className='table-selected'></td>
             <td className='table-border'></td>
           </tr>
           <tr>
@@ -131,7 +131,7 @@ const Benefits = () => {
               </div>
             </td>
             <td className='table-border'></td>
-            <td className='table-border bg-yellow'></td>
+            <td className='table-selected'></td>
             <td className='table-border'></td>
           </tr>
           <tr>
@@ -142,7 +142,7 @@ const Benefits = () => {
               </div>
             </td>
             <td className='table-border'></td>
-            <td className='table-border bg-yellow'></td>
+            <td className='table-selected'></td>
             <td className='table-border'></td>
           </tr>
           <tr>
@@ -153,7 +153,7 @@ const Benefits = () => {
               </div>
             </td>
             <td className='table-border'></td>
-            <td className='table-border bg-yellow'></td>
+            <td className='table-selected'></td>
             <td className='table-border'></td>
           </tr>
         </tbody>
