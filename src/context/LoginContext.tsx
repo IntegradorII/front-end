@@ -19,8 +19,6 @@ interface LoginContextProps {
   openSignUpModal: boolean
   setOpenSignUpModal: Dispatch<SetStateAction<boolean>>
   dataSession: { session: Session | null, status: 'authenticated' | 'loading' | 'unauthenticated' }
-  // handleLogin: (data: LoginData) => void
-  // handleLogout: () => void
 }
 
 const LoginContext = createContext<LoginContextProps>(
@@ -34,11 +32,6 @@ interface LoginContextProviderProps {
   children: JSX.Element
 }
 
-// interface LoginData {
-//   email: string
-//   password: string
-// }
-
 const LoginContextProvider = ({
   children
 }: LoginContextProviderProps) => {
@@ -48,27 +41,6 @@ const LoginContextProvider = ({
   const [openSignUpModal, setOpenSignUpModal] = useState<boolean>(false)
   const { data: session, status } = useSession()
   const dataSession = { session, status }
-  // console.log('dataSession', dataSession)
-  // const handleLogin = (data: LoginData) => {
-  //   signIn('credentials', {
-  //     redirect: false,
-  //     email: data.email,
-  //     password: data.password
-  //   }).then((res) => {
-  //     console.log('login', res)
-  //     console.log(res?.error)
-  //     // eslint-disable-next-line @typescript-eslint/no-confusing-void-expression
-  //     // router.push('/dashboard')
-  //     // setOpenModalLogin(false)
-  //   }).catch((err) => {
-  //     console.error(err)
-  //   })
-  // }
-  // const handleLogout = () => {
-  //   signOut({ redirect: true, callbackUrl: '/' }).catch((err) => {
-  //     console.error(err)
-  //   })
-  // }
   return (
     <LoginContext.Provider
       value={{
@@ -81,8 +53,6 @@ const LoginContextProvider = ({
         openSignUpModal,
         setOpenSignUpModal,
         dataSession
-        // handleLogin,
-        // handleLogout
       }}
     >
       {children}

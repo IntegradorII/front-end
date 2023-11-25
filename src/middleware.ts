@@ -1,5 +1,4 @@
 import { withAuth, type NextRequestWithAuth } from 'next-auth/middleware'
-// import { auth } from '@/app/api/auth/[...nextauth]/route'
 
 export const config = {
   matcher: [

@@ -22,7 +22,7 @@ export default async function RootLayout ({ children }: RootLayoutProps) {
   const session = await auth()
 
   return (
-    <html lang="es">
+    <html lang='es'>
       <head>
         <title>OFFCORSS</title>
       </head>
@@ -33,7 +33,7 @@ export default async function RootLayout ({ children }: RootLayoutProps) {
               gridTemplateAreas: '"header header" "sidebar main" "footer footer"',
               gridTemplateRows: 'auto 1fr auto',
               gridTemplateColumns: 'auto 1fr'
-            }} className="min-h-screen w-full">
+            }} className='min-h-screen w-full'>
               <div className='w-full'>
                 <Header />
                 {children}

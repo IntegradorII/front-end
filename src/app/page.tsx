@@ -6,7 +6,7 @@ export default function App () {
         backgroundSize: 'cover',
         backgroundPosition: 'center'
       }}
-      className="flex flex-col items-center gap-5 p-2 h-screen"
+      className='flex flex-col items-center gap-5 p-2 h-screen'
     >
 
     </main>

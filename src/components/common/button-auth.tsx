@@ -4,10 +4,10 @@ import { FaUser } from 'react-icons/fa'
 import { TbLogout } from 'react-icons/tb'
 import Link from 'next/link'
 import { useLoginContext } from '@/context/LoginContext'
-import { SignUpModal } from '@/components/modals/signup-modal'
-import { LoginModal } from '@/components/modals/signin-modal'
-import { ForgotPasswordModal } from '@/components/modals/forgot-password-modal'
-import { IdSignUpModal } from '@/components/modals/id-signup-modal'
+import { SignUpModal } from '@/components/Modals/signup-modal'
+import { LoginModal } from '@/components/Modals/signin-modal'
+import { ForgotPasswordModal } from '@/components/Modals/forgot-password-modal'
+import { IdSignUpModal } from '@/components/Modals/id-signup-modal'
 import { signIn, signOut } from 'next-auth/react'
 
 export function ButtonAuth () {
@@ -21,7 +21,7 @@ export function ButtonAuth () {
   } = useLoginContext()
 
   return (
-    <div className="flex items-center justify-center px-2 gap-1">
+    <div className='flex items-center justify-center px-2 gap-1'>
       {session
         ? (
           <>

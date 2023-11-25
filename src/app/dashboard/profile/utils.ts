@@ -90,24 +90,6 @@ export const saleItems: SaleItem[] = [
     image: '/images/photo-child-5.png',
     profileId: 'ax1'
   }
-  // {
-  //   id: 'cx3',
-  //   name: 'Camisa de cuadros',
-  //   image: '/images/img-no-disponible.png',
-  //   profileId: 'ax1'
-  // },
-  // {
-  //   id: 'cx4',
-  //   name: 'Camisa de cuadros',
-  //   image: '/images/img-no-disponible.png',
-  //   profileId: 'ax1'
-  // },
-  // {
-  //   id: 'cx5',
-  //   name: 'Camisa de cuadros',
-  //   image: '/images/img-no-disponible.png',
-  //   profileId: 'ax1'
-  // }
 ]
 
 export const getKidProfile = async (id: string) => {

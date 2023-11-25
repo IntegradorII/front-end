@@ -10,7 +10,7 @@ interface HistoryItemProps {
 
 const HistoryItem = ({ imagePath, productName, purchaseDate, price }: (HistoryItemProps)) => {
   return (
-    <div className="flex rounded-2xl bg-white h-[10rem] w-full">
+    <div className='flex rounded-2xl bg-white h-[10rem] w-full'>
       <div className='flex items-center justify-center px-12 rounded-full'>
         <Image src={imagePath} alt="Foto de producto" width={90} height={90}/>
       </div>

@@ -22,19 +22,6 @@ export const authOptions: NextAuthOptions = {
   },
   callbacks: {
     async jwt ({ token }) {
-      // Persist OAuth access_token and or the user id to the token right after signin
-      // const { email, name, picture } = token
-      // const jwtToken = await signJwt({ email, name, image: picture })
-      // const userDB = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/auth0`, {
-      //   method: 'POST',
-      //   headers: {
-      //     'Content-Type': 'application/json',
-      //     Authorization: `Bearer ${jwtToken}`
-      //   }
-      // }).then(async res => await res.json())
-      // token.accessToken = jwtToken
-      // token.user = userDB
-      // console.log('jwt', token)
       return token
     }
   }

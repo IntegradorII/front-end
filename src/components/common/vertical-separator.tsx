@@ -4,7 +4,7 @@ interface VerticalSeparatorProps {
 
 const VerticalSeparator = ({ percentage }: VerticalSeparatorProps) => {
   return (
-    <div style={{ height: `${percentage}%` }} className="w-[2px] bg-separator-gray" />
+    <div style={{ height: `${percentage}%` }} className='w-[2px] bg-separator-gray'/>
   )
 }
 

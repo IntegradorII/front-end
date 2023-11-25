@@ -15,20 +15,6 @@ export async function KidProfile ({ profile }: KidProfileProps) {
           <img src={profile.profileImg} alt={profile.firstName} width={90} height={90} className='rounded-full'/>
           <span className='text-secondary-text font-bold'>{profile.firstName} {profile.lastName}</span>
         </div>
-        { /* <div className="grid grid-cols-3 grid-rows-2 gap-4">
-          <div className="row-span-1 col-span-1">Genero</div>
-          <div className="row-span-2 row-start-2 col-span-1">Masculino</div>
-          <div>
-            <VerticalSeparator percentage={100}/>
-          </div>
-          <div className="row-span-1 col-span-2">Fecha de nacimiento</div>
-          <div className="row-span-2 row-start-2 col-span-2">12 de mayo de 2013</div>
-          <div>
-            <VerticalSeparator percentage={100}/>
-          </div>
-          <div className="row-span-1 col-span-3">Parentesco</div>
-          <div className="row-span-2 row-start-2 col-span-3">Hijo</div>
-        </div> */ }
         <div className='flex flex-col gap-2 max-w-[17rem]'>
           <h2 className='font-bold'>Últimas compras</h2>
           <div className='w-full flex flex-wrap items-center justify-center gap-3'>
@@ -42,26 +28,6 @@ export async function KidProfile ({ profile }: KidProfileProps) {
             ))}
           </div>
         </div>
-        {/* <div className='flex flex-col gap-1 max-w-[17rem]'>
-          <label className='pl-3 font-bold'>Nombre</label>
-          <input type='text' value={profile.firstName} readOnly
-            className='w-full rounded-xl py-1 px-3'/>
-        </div>
-        <div className='flex flex-col gap-1 max-w-[17rem]'>
-          <label className='pl-3 font-bold'>Apellido</label>
-          <input type='text' value={profile.lastName} readOnly
-            className='w-full rounded-xl py-1 px-3'/>
-        </div>
-        <div className='flex flex-col gap-1 max-w-[17rem]'>
-          <label className='pl-3 font-bold'>Genero</label>
-          <input type='text' value={profile.gender} readOnly
-            className='w-full rounded-xl py-1 px-3'/>
-        </div>
-        <div className='flex flex-col gap-1 max-w-[17rem]'>
-          <label className='pl-3 font-bold'>Fecha de nacimiento</label>
-          <input type='text' value={profile.birthDate} readOnly
-            className='w-full rounded-xl py-1 px-3'/>
-        </div> */}
       </div>
       <div className='h-full'>
         <VerticalSeparator percentage={100}/>

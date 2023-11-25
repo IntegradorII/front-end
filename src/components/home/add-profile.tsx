@@ -1,5 +1,4 @@
 import { Button } from '@/components/common/add-button'
-import { MdOutlinePets } from 'react-icons/md'
 import type { IconType } from 'react-icons'
 
 interface AddProfileProps {
