@@ -4,10 +4,6 @@ import { FaUser } from 'react-icons/fa'
 import { TbLogout } from 'react-icons/tb'
 import Link from 'next/link'
 import { useLoginContext } from '@/context/LoginContext'
-import { SignUpModal } from '@/components/modals/signup-modal'
-import { LoginModal } from '@/components/modals/signin-modal'
-import { ForgotPasswordModal } from '@/components/modals/forgot-password-modal'
-import { IdSignUpModal } from '@/components/modals/id-signup-modal'
 import { signIn, signOut } from 'next-auth/react'
 
 export function ButtonAuth () {
@@ -15,7 +11,6 @@ export function ButtonAuth () {
   const { session } = dataSession
 
   const {
-    // setOpenModalLogin,
     setOpenIdSignUpModal
     // handleLogout
   } = useLoginContext()
@@ -60,10 +55,6 @@ export function ButtonAuth () {
           </button>
         </>)
       }
-      <SignUpModal />
-      <LoginModal />
-      <ForgotPasswordModal />
-      <IdSignUpModal />
     </div>
   )
 }
