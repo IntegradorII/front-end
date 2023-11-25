@@ -31,7 +31,7 @@ export function ButtonAuth () {
               onClick={() => {
                 signOut({
                   redirect: true,
-                  callbackUrl: 'http://localhost:3000/'
+                  callbackUrl: 'https://integrador2-nine.vercel.app/'
                 }).catch(console.error)
               } }
             >
@@ -48,7 +48,7 @@ export function ButtonAuth () {
           <button onClick={() => {
             signIn('auth0', {
               redirect: true,
-              callbackUrl: 'http://localhost:3000/dashboard'
+              callbackUrl: 'https://integrador2-nine.vercel.app/dashboard'
             }).catch(console.error)
           } } className='w-[150px] bg-yellow hover:bg-yellow-dark text-black hover:text-white font-bold py-2 px-4 rounded-3xl'>
             Iniciar Sesión
