@@ -3,7 +3,7 @@
 import { FaUser } from 'react-icons/fa'
 import { TbLogout } from 'react-icons/tb'
 import Link from 'next/link'
-import { useLoginContext } from '@/context/LoginContext'
+import { useLoginContext } from '@/context/login-context'
 import { signIn, signOut } from 'next-auth/react'
 
 export function ButtonAuth () {

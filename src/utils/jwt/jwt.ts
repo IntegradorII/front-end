@@ -1,9 +1,10 @@
 import jwt from 'jsonwebtoken'
 
 export interface JwtPayload {
-  name: string | null | undefined
-  email: string | null | undefined
-  image: string | null | undefined
+  sub: string | undefined
+  id_token: string | undefined
+  access_token: string | undefined
+  expires_at: number | undefined
 }
 
 export const signJwt = async (payload: JwtPayload, expiresIn = '1d') => {
