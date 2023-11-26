@@ -26,6 +26,7 @@ export const authOptions: NextAuthOptions = {
       // console.log('usera', user)
       // console.log('account', account)
       if (user && account) { // is sign in or sign up event
+        console.log('user: ', user)
         token.auth_token = await signJwt({
           sub: token.sub,
           id_token: account.id_token,
