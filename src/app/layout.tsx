@@ -5,7 +5,7 @@ import { Footer } from '@/components/common/footer'
 import { Header } from '@/components/common/header'
 import { SessionAuthProvider } from '@/context/session-auth-provider'
 import { auth } from '@/app/api/auth/[...nextauth]/route'
-import { LoginContextProvider } from '@/context/LoginContext'
+import { LoginContextProvider } from '@/context/login-context'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,7 +20,6 @@ interface RootLayoutProps {
 
 export default async function RootLayout ({ children }: RootLayoutProps) {
   const session = await auth()
-
   return (
     <html lang='es'>
       <head>
