@@ -4,6 +4,7 @@ import { LiaBirthdayCakeSolid } from 'react-icons/lia'
 import Link from 'next/link'
 
 export interface ChildCardInfo {
+  id: string
   imagePath: string
   rship: string
   name: string
