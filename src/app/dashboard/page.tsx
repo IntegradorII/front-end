@@ -1,11 +1,9 @@
 import { HorizontalSeparator } from '@/components/common/horizontal-separator'
 import { AddProfile } from '@/components/home/add-profile'
-import { ChildCard } from '@/components/home/child-card'
-import { ProfilesBar } from '@/components/home/profiles-bar'
 import { Recommended } from '@/components/home/recommended'
-import { SlArrowLeft, SlArrowRight } from 'react-icons/sl'
 import { MdOutlinePets } from 'react-icons/md'
 import { FaChildReaching } from 'react-icons/fa6'
+import { ChlidList } from '@/components/home/chlid-list'
 
 const Home = () => {
   const childimg = [
@@ -27,18 +25,7 @@ const Home = () => {
   return (
     <section className='w-full flex flex-col gap-7'>
       <div className='flex justify-between items-start gap-7'>
-        <div className='flex flex-col items-center justify-center gap-4'>
-          <div className='flex items-center justify-center gap-8'>
-            <button className='arrow-button rounded-full p-3'>
-              <SlArrowLeft/>
-            </button>
-            <ChildCard imagePath='/images/profile.png' rship='Hijo' name='Pepito' birthDay='19 de febrero'/>
-            <button className='arrow-button rounded-full p-3'>
-              <SlArrowRight/>
-            </button>
-          </div>
-          <ProfilesBar/>
-        </div>
+        <ChlidList />
         <div className='flex flex-col gap-4'>
           <AddProfile text='Agregar niño' Icon={FaChildReaching}/>
           <AddProfile text='Agregar mascota' Icon={MdOutlinePets}/>

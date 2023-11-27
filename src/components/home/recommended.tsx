@@ -1,56 +1,66 @@
+'use client'
 import { SlArrowLeft, SlArrowRight } from 'react-icons/sl'
 import { VerticalSeparator } from '@/components/common/vertical-separator'
 import Image from 'next/image'
+import { useState } from 'react'
 
 interface SuggestedProps {
   title: string
   images: string[]
 }
 
+const imagesToShow = 5
+
 const Recommended = ({ title, images }: (SuggestedProps)) => {
+  const [myImages] = useState(images)
+  const [from, setFrom] = useState(0)
+
+  const handleLeft = () => {
+    if (imagesToShow >= images.length) return
+    if (from > 0) {
+      setFrom(from - 1)
+    } else {
+      setFrom(images.length - imagesToShow)
+    }
+  }
+
+  const handleRight = () => {
+    if (imagesToShow >= images.length) return
+    if (from < images.length - 1) {
+      setFrom(from + 1)
+    } else {
+      setFrom(0)
+    }
+  }
+  let to = Math.min(from + imagesToShow, images.length)
+  let imagesToShowArray = myImages.slice(from, from + imagesToShow)
+  const l = imagesToShowArray.length
+  if (l < imagesToShow) {
+    to = Math.min(imagesToShow - l, from)
+    imagesToShowArray = [...imagesToShowArray, ...myImages.slice(0, to)]
+  }
+
   return (
     <div className='w-full flex flex-col font-bold gap-4'>
       {title}
       <div className='max-w-[910px] h-[150px] overflow-hidden flex justify-between bg-white rounded-lg'>
-        <div className='arrow-button rounded-2xl px-3'>
+        <button onClick={handleLeft} className='arrow-button rounded-2xl px-3'>
           <SlArrowLeft/>
-        </div>
-        <div className='flex w-full h-full gap-1'>
-          <VerticalSeparator percentage={100}/>
-          <div className='h-full aspect-square p-2'>
-            <div className='h-full w-full'>
-              <Image src={images[0]} alt='Imagen de prenda' width={90} height={90} className='h-full w-full object-cover'/>
-            </div>
-          </div>
-          <VerticalSeparator percentage={100}/>
-          <div className='h-full aspect-square p-2'>
-            <div className='h-full w-full'>
-              <Image src={images[1]} alt='Imagen de prenda' width={90} height={90} className='h-full w-full object-cover'/>
-            </div>
-          </div>
-          <VerticalSeparator percentage={100}/>
-          <div className='h-full aspect-square p-2'>
-            <div className='h-full w-full'>
-              <Image src={images[2]} alt='Imagen de prenda' width={90} height={90} className='h-full w-full object-cover'/>
-            </div>
-          </div>
-          <VerticalSeparator percentage={100}/>
-          <div className='h-full aspect-square p-2'>
-            <div className='h-full w-full'>
-              <Image src={images[3]} alt='Imagen de prenda' width={90} height={90} className='h-full w-full object-cover'/>
-            </div>
-          </div>
-          <VerticalSeparator percentage={100}/>
-          <div className='h-full aspect-square p-2'>
-            <div className='h-full w-full'>
-              <Image src={images[4]} alt='Imagen de prenda' width={90} height={90} className='h-full w-full object-cover'/>
-            </div>
-          </div>
-          <VerticalSeparator percentage={100}/>
-        </div>
-        <div className='arrow-button rounded-lg px-3'>
+        </button>
+        <ul className='flex w-full h-full gap-1'>
+          {imagesToShowArray.map((image, index) => (
+            <li key={index} className='h-full flex'>
+              <VerticalSeparator percentage={100}/>
+              <div className='h-full aspect-square p-2'>
+                <Image src={image} alt='Imagen de prenda' width={90} height={90} className='h-full w-full object-cover'/>
+              </div>
+            </li>
+          ))}
+        </ul>
+        <VerticalSeparator percentage={100}/>
+        <button onClick={handleRight} className='arrow-button rounded-lg px-3'>
           <SlArrowRight/>
-        </div>
+        </button>
       </div>
     </div>
   )
