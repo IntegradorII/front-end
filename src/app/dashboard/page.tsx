@@ -11,7 +11,10 @@ const Home = () => {
     '/images/photo-child-2.png',
     '/images/photo-child-3.png',
     '/images/photo-child-4.png',
-    '/images/photo-child-5.png'
+    '/images/photo-child-5.png',
+    '/images/photo-child-6.png',
+    '/images/photo-child-7.png',
+    '/images/photo-child-8.png'
   ]
 
   const petimg = [
@@ -19,7 +22,10 @@ const Home = () => {
     '/images/photo-pet-2.png',
     '/images/photo-pet-3.png',
     '/images/photo-pet-4.png',
-    '/images/photo-pet-5.png'
+    '/images/photo-pet-5.png',
+    '/images/photo-pet-6.png',
+    '/images/photo-pet-7.png',
+    '/images/photo-pet-8.png'
   ]
 
   return (
