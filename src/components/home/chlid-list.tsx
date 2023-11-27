@@ -26,9 +26,15 @@ const childs: ChildCardInfo[] = [
   },
   {
     imagePath: '/images/profile.png',
-    rship: 'Ahijada',
-    name: 'María',
+    rship: 'Perrhijo',
+    name: 'Tom',
     birthDay: '22 de enero'
+  },
+  {
+    imagePath: '/images/profile.png',
+    rship: 'Gathija',
+    name: 'Luna',
+    birthDay: '03 de marzo'
   }
 ]
 
