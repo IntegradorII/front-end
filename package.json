@@ -24,6 +24,7 @@
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^4.11.0",
+    "uuid": "^9.0.1",
     "yarn": "^1.22.21"
   },
   "devDependencies": {
@@ -34,6 +35,7 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/uuid": "^9.0.7",
     "@typescript-eslint/eslint-plugin": "^6.7.5",
     "autoprefixer": "^10",
     "eslint": "^8.51.0",

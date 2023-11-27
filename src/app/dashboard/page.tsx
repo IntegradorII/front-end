@@ -4,28 +4,29 @@ import { Recommended } from '@/components/home/recommended'
 import { MdOutlinePets } from 'react-icons/md'
 import { FaChildReaching } from 'react-icons/fa6'
 import { ChlidList } from '@/components/home/chlid-list'
+import { v4 } from 'uuid'
 
 const Home = () => {
   const childimg = [
-    '/images/photo-child-1.png',
-    '/images/photo-child-2.png',
-    '/images/photo-child-3.png',
-    '/images/photo-child-4.png',
-    '/images/photo-child-5.png',
-    '/images/photo-child-6.png',
-    '/images/photo-child-7.png',
-    '/images/photo-child-8.png'
+    { id: v4(), src: '/images/photo-child-1.png', alt: 'Foto prenda 1' },
+    { id: v4(), src: '/images/photo-child-2.png', alt: 'Foto prenda 2' },
+    { id: v4(), src: '/images/photo-child-3.png', alt: 'Foto prenda 3' },
+    { id: v4(), src: '/images/photo-child-4.png', alt: 'Foto prenda 4' },
+    { id: v4(), src: '/images/photo-child-5.png', alt: 'Foto prenda 5' },
+    { id: v4(), src: '/images/photo-child-6.png', alt: 'Foto prenda 6' },
+    { id: v4(), src: '/images/photo-child-7.png', alt: 'Foto prenda 7' },
+    { id: v4(), src: '/images/photo-child-8.png', alt: 'Foto prenda 8' }
   ]
 
   const petimg = [
-    '/images/photo-pet-1.png',
-    '/images/photo-pet-2.png',
-    '/images/photo-pet-3.png',
-    '/images/photo-pet-4.png',
-    '/images/photo-pet-5.png',
-    '/images/photo-pet-6.png',
-    '/images/photo-pet-7.png',
-    '/images/photo-pet-8.png'
+    { id: v4(), src: '/images/photo-pet-1.png', alt: 'Foto prenda 1' },
+    { id: v4(), src: '/images/photo-pet-2.png', alt: 'Foto prenda 2' },
+    { id: v4(), src: '/images/photo-pet-3.png', alt: 'Foto prenda 3' },
+    { id: v4(), src: '/images/photo-pet-4.png', alt: 'Foto prenda 4' },
+    { id: v4(), src: '/images/photo-pet-5.png', alt: 'Foto prenda 5' },
+    { id: v4(), src: '/images/photo-pet-6.png', alt: 'Foto prenda 6' },
+    { id: v4(), src: '/images/photo-pet-7.png', alt: 'Foto prenda 7' },
+    { id: v4(), src: '/images/photo-pet-8.png', alt: 'Foto prenda 8' }
   ]
 
   return (

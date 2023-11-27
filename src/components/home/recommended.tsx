@@ -4,9 +4,15 @@ import { VerticalSeparator } from '@/components/common/vertical-separator'
 import Image from 'next/image'
 import { useState } from 'react'
 
+interface ImageInfo {
+  id: string
+  src: string
+  alt: string
+}
+
 interface SuggestedProps {
   title: string
-  images: string[]
+  images: ImageInfo[]
 }
 
 const imagesToShow = 5
@@ -49,10 +55,10 @@ const Recommended = ({ title, images }: (SuggestedProps)) => {
         </button>
         <ul className='flex w-full h-full gap-1'>
           {imagesToShowArray.map((image, index) => (
-            <li key={index} className='h-full flex'>
+            <li key={image.id} className='h-full flex'>
               <VerticalSeparator percentage={100}/>
               <div className='h-full aspect-square p-2'>
-                <Image src={image} alt='Imagen de prenda' width={90} height={90} className='h-full w-full object-cover'/>
+                <Image src={image.src} alt='Imagen de prenda' width={90} height={90} className='h-full w-full object-cover'/>
               </div>
             </li>
           ))}
