@@ -44,11 +44,17 @@ enum User_role_enum {
 
 model User {
   id            String    @id @default(uuid())
+  docType       String?
+  docNumber     String?
   name          String?
   email         String?   @unique
   emailVerified DateTime?
   image         String?
   role          User_role_enum      @default(USER)
+  firstName     String?
+  lastName      String?
+  segmentId     String?
+  points        Int?
   accounts      Account[]
   sessions      Session[]
 }
