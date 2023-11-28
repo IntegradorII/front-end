@@ -3,7 +3,7 @@ import NextAuth, { getServerSession } from 'next-auth'
 import Aut0Provider from 'next-auth/providers/auth0'
 import type { NextAuthOptions } from 'next-auth'
 import { PrismaAdapter } from '@auth/prisma-adapter'
-import { PrismaClient } from '@prisma/client'
+import { PrismaClient, type User } from '@prisma/client'
 import { signJwt } from '@/utils/jwt/jwt'
 
 const prisma = new PrismaClient()
@@ -22,21 +22,21 @@ export const authOptions: NextAuthOptions = {
   },
   callbacks: {
     async jwt ({ token, user, account }) {
-      // console.log('token', token)
-      // console.log('usera', user)
-      // console.log('account', account)
       if (user && account) { // is sign in or sign up event
-        console.log('user: ', user)
+        // console.log('user', user)
+        const myUser = user as User
         token.auth_token = await signJwt({
           sub: token.sub,
           id_token: account.id_token,
+          role: myUser.role,
+          email: myUser.email,
           access_token: account.access_token,
           expires_at: account.expires_at
         })
       }
       return token
     },
-    async session ({ session, token }) {
+    async session ({ session, token, user }) {
       session.auth_token = token.auth_token as string
       return session
     }

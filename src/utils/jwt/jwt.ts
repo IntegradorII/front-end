@@ -1,13 +1,15 @@
 import jwt from 'jsonwebtoken'
 
 export interface JwtPayload {
-  sub: string | undefined
-  id_token: string | undefined
-  access_token: string | undefined
-  expires_at: number | undefined
+  sub: string | undefined | null
+  id_token: string | undefined | null
+  role: string | undefined | null
+  email: string | undefined | null
+  access_token: string | undefined | null
+  expires_at: number | undefined | null
 }
 
-export const signJwt = async (payload: JwtPayload, expiresIn = '1d') => {
+export const signJwt = async (payload: JwtPayload, expiresIn = '1h') => {
   const token = jwt.sign(payload, process.env.APP_JWT_SECRET ?? '', {
     algorithm: 'HS512',
     expiresIn
