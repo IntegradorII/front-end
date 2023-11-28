@@ -9,7 +9,7 @@ import { v4 } from 'uuid'
 const childs: ChildCardInfo[] = [
   {
     id: v4(),
-    imagePath: '/images/child-avatar-1.png',
+    imagePath: '/images/child-avatar-3.png',
     rship: 'Hijo',
     name: 'Pepito',
     birthDay: '19 de febrero'
@@ -23,7 +23,7 @@ const childs: ChildCardInfo[] = [
   },
   {
     id: v4(),
-    imagePath: '/images/child-avatar-3.png',
+    imagePath: '/images/child-avatar-1.png',
     rship: 'Sobrino',
     name: 'Luis',
     birthDay: '15 de agosto'
