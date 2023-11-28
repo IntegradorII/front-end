@@ -12,11 +12,10 @@ export function ButtonAuth () {
 
   const {
     setOpenIdSignUpModal
-    // handleLogout
   } = useLoginContext()
 
   return (
-    <div className='flex items-center justify-center px-2 gap-1'>
+    <div className='flex items-center justify-center px-2 gap-4'>
       {session
         ? (
           <>

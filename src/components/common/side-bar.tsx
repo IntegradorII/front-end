@@ -36,7 +36,7 @@ const SideBar = () => {
   return (
     <div className='w-[21rem] first-letter:flex flex justify-center fixed h-full border-r-separator-gray border-r-2 p-8'>
       <div className='top-0 left-0 w-full flex h-fit'>
-        <div className='flex flex-col items-center gap-3 bg-white p-8 rounded-3xl text-sm'>
+        <div className='flex flex-col items-center gap-3 bg-white px-8 py-5 rounded-3xl text-sm'>
           <LinkWrapper url='/dashboard/user-profile' className='w-full flex flex-col items-center'>
             <div className='w-full flex flex-col items-center'>
               <Image src="/images/profile.png" alt="Foto de perfil" width={90} height={90} className='rounded-full'/>
