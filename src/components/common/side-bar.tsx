@@ -8,7 +8,7 @@ import Link from 'next/link'
 
 const listItems: LinkItem[] = [
   {
-    name: 'Home',
+    name: 'Inicio',
     url: '/dashboard'
   },
   {
