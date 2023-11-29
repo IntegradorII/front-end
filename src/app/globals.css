@@ -16,10 +16,6 @@ body {
   @apply bg-[#EDEDED];
 }
 
-.debug {
-  border: 1px solid red;
-}
-
 .actual-page {
   @apply bg-separator-gray border-4 border-white;
 }

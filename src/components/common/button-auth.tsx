@@ -40,7 +40,7 @@ export function ButtonAuth () {
             </button>
           </>)
         : (<>
-          <button onClick={() => { console.log('Alogo'); setOpenIdSignUpModal(true) } } className='w-[150px] bg-yellow hover:bg-yellow-dark text-black hover:text-white font-bold py-2 px-4 rounded-3xl'>
+          <button onClick={() => { console.log('Alogo'); setOpenIdSignUpModal(true) } } className='w-[150px] bg-yellow hover:bg-light-yellow hover:border-2 hover:border-yellow text-black font-bold py-2 px-4 rounded-3xl'>
             Regitrarse
           </button>
           <button onClick={() => {
@@ -48,7 +48,7 @@ export function ButtonAuth () {
               redirect: true,
               callbackUrl: '/dashboard'
             }).catch(console.error)
-          } } className='w-[150px] bg-yellow hover:bg-yellow-dark text-black hover:text-white font-bold py-2 px-4 rounded-3xl'>
+          } } className='w-[150px] bg-yellow hover:bg-light-yellow hover:border-2 hover:border-yellow text-black font-bold py-2 px-4 rounded-3xl'>
             Iniciar Sesión
           </button>
         </>)
