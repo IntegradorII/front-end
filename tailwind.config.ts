@@ -22,7 +22,7 @@ const config: Config = {
         'dark-gray': '#1d1d1e',
         'separator-gray': '#d9d9d9',
         'yellow': '#ffdb00',
-        'yellow-dark': '#f5a800',
+        'light-yellow': '#ffeb36',
         'secondary-text': '#444647',
         'light-text': '#a1a2a2'
       }
