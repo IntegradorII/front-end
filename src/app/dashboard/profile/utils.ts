@@ -17,6 +17,13 @@ export interface SaleItem {
   profileId: string
 }
 
+export interface SaleItemPets {
+  id: string
+  name: string
+  image: string
+  profileId: string
+}
+
 export interface KidProfile {
   id: string
   profileType: 'kid' | 'pet'
@@ -31,6 +38,7 @@ export interface KidProfile {
   topSizeImg: string
   lowerSizeImg: string
   shoesSizeImg: string
+  relation: string
 }
 
 export interface PetProfile {
@@ -41,8 +49,11 @@ export interface PetProfile {
   breed: string
   gender: string
   birthDate: string
+
+  profileImg: string
   size: string
   characteristcs: typeof characteristcs
+  relation: string
 }
 
 export const kidProfiles: KidProfile[] = [
@@ -50,16 +61,17 @@ export const kidProfiles: KidProfile[] = [
     id: 'ax1',
     profileType: 'kid',
     firstName: 'Pepito',
-    lastName: 'Perez',
+    lastName: 'Pérez',
     gender: 'Femenino',
     birthDate: '01/01/2010',
     topSize: 'Talla 10',
     lowerSize: 'Talla 10',
     shoesSize: 'Talla 30',
-    profileImg: '/images/profile.png',
+    profileImg: '/images/child1.png',
     topSizeImg: '/images/top-size.png',
     lowerSizeImg: '/images/lower-size.png',
-    shoesSizeImg: '/images/shoes-size.png'
+    shoesSizeImg: '/images/shoes-size.png',
+    relation: 'Hijo'
   }
 ]
 
@@ -73,7 +85,9 @@ export const petProfiles: PetProfile[] = [
     gender: 'Hembra',
     birthDate: '01/01/2010',
     size: 'Grande',
-    characteristcs: ['Cazador', 'Curioso', 'Travieso', 'Delicado']
+    profileImg: '/images/pet1.png',
+    characteristcs: ['Cazador', 'Curioso', 'Travieso', 'Delicado'],
+    relation: 'hijo'
   }
 ]
 
@@ -89,6 +103,21 @@ export const saleItems: SaleItem[] = [
     name: 'Pantalones',
     image: '/images/photo-child-5.png',
     profileId: 'ax1'
+  }
+]
+
+export const saleItemsPets: SaleItemPets[] = [
+  {
+    id: 'cx1',
+    name: 'Pañoleta',
+    image: '/images/photo-pet-7.png',
+    profileId: 'bx1'
+  },
+  {
+    id: 'cx2',
+    name: 'Collar',
+    image: '/images/photo-pet-4.png',
+    profileId: 'bx1'
   }
 ]
 
@@ -114,6 +143,14 @@ export const getSaleItems = async (profileId: string) => {
   return await new Promise<SaleItem[]>((resolve) => {
     setTimeout(() => {
       resolve(saleItems.filter((item) => item.profileId === profileId))
+    }, 500)
+  })
+}
+
+export const getSaleItemsPets = async (profileId: string) => {
+  return await new Promise<SaleItemPets[]>((resolve) => {
+    setTimeout(() => {
+      resolve(saleItemsPets.filter((item) => item.profileId === profileId))
     }, 500)
   })
 }

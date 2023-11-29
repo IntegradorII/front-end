@@ -1,4 +1,5 @@
 import { getKidProfile, getPetProfile } from '@/app/dashboard/profile/utils'
+import { PetProfile } from '@/components/profile/dog-profile'
 import { KidProfile } from '@/components/profile/kid-profile'
 
 interface Params {
@@ -17,7 +18,7 @@ export default async function Profile ({ params }: ProfileProps) {
   }
   const petProfile = await getPetProfile(profileId)
   if (petProfile) {
-    return <div>Pet Profile</div>
+    return <PetProfile profile={petProfile} />
   }
   return (
     <section className='p-4'>
