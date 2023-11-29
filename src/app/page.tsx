@@ -9,7 +9,7 @@ export default function App () {
       className='flex flex-col items-center gap-5 p-2 h-screen'
     >
       <div className="flex flex-col items-start w-full h-full text-2xl text-secondary-text font-semibold gap-2 pl-10 pt-32">
-        <span className="text-4xl font-bold">BENEFICIOS</span>
+        <span className="text-3xl font-bold">BENEFICIOS</span>
         <span>• Obtén una experiencia más personalizada.</span>
         <span>• Lleva un registro de tus niños y mascotas.</span>
         <span>• Visualiza las nuevas colecciones.</span>
