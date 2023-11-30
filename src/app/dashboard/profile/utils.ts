@@ -31,9 +31,9 @@ export interface KidProfile {
   lastName: string
   gender: string
   birthDate: string
-  topSize: string
-  lowerSize: string
-  shoesSize: string
+  topSize: number
+  lowerSize: number
+  shoesSize: number
   profileImg: string
   topSizeImg: string
   lowerSizeImg: string
@@ -44,7 +44,7 @@ export interface KidProfile {
 export interface PetProfile {
   id: string
   profileType: 'kid' | 'pet'
-  type: 'dog' | 'cat'
+  type: '' | 'dog' | 'cat'
   name: string
   breed: string
   gender: string
@@ -62,16 +62,16 @@ export const kidProfiles: KidProfile[] = [
     profileType: 'kid',
     firstName: 'Pepito',
     lastName: 'Pérez',
-    gender: 'Femenino',
+    gender: 'masculino',
     birthDate: '01/01/2010',
-    topSize: 'Talla 10',
-    lowerSize: 'Talla 10',
-    shoesSize: 'Talla 30',
+    topSize: 6,
+    lowerSize: 10,
+    shoesSize: 12,
     profileImg: '/images/child1.png',
     topSizeImg: '/images/top-size.png',
     lowerSizeImg: '/images/lower-size.png',
     shoesSizeImg: '/images/shoes-size.png',
-    relation: 'Hijo'
+    relation: 'primo'
   }
 ]
 

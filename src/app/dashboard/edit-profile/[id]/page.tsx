@@ -1,6 +1,7 @@
+'use client'
 import { getKidProfile, getPetProfile } from '@/app/dashboard/profile/utils'
-import { PetProfile } from '@/components/profile/dog-profile'
-import { KidProfile } from '@/components/profile/kid-profile'
+import EditKidProfile from '@/components/edit-profile/edit-child-profile'
+import EditPetProfile from '@/components/edit-profile/edit-pet-profile'
 
 interface Params {
   id: string
@@ -13,12 +14,12 @@ interface ProfileProps {
 export default async function Profile ({ params }: ProfileProps) {
   const profileId = params.id
   const kidProfile = await getKidProfile(profileId)
-  const petProfile = await getPetProfile(profileId)
   if (kidProfile) {
-    return <KidProfile profile={kidProfile} />
+    return <EditKidProfile profile={kidProfile} />
   }
+  const petProfile = await getPetProfile(profileId)
   if (petProfile) {
-    return <PetProfile profile={petProfile} />
+    return <EditPetProfile profile={petProfile} />
   }
   return (
     <section className='p-4'>

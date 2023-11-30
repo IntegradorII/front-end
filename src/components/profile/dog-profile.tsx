@@ -1,5 +1,6 @@
 import { type PetProfile as PP, type SaleItemPets, getSaleItemsPets } from '@/app/dashboard/profile/utils'
 import Image from 'next/image'
+import Link from 'next/link'
 
 interface PetProfileProps {
   profile: PP
@@ -108,7 +109,9 @@ export async function PetProfile ({ profile }: PetProfileProps) {
             </div>
           ))}
         </div>
-        <button className='w-full max-w-[10rem] rounded-full py-2 px-3 bg-yellow font-bold'>Editar</button>
+        <Link href={`/dashboard/edit-profile/${profile.id}`} >
+          <button className='w-full max-w-[10rem] rounded-full py-2 px-3 bg-yellow font-bold'>Editar</button>
+        </Link>
       </div>
     </section>
   )

@@ -12,9 +12,9 @@ export interface ChildCardInfo {
   path: string
 }
 
-const ChildCard = ({ imagePath, rship, name, birthDay }: (ChildCardInfo)) => {
+const ChildCard = ({ imagePath, rship, name, birthDay, path }: (ChildCardInfo)) => {
   return (
-    <Link href='/dashboard/profile/ax1' className='flex bg-white rounded-xl py-3 w-[22rem]'>
+    <Link href={path} className='flex bg-white rounded-xl py-3 w-[22rem]'>
       <div className='px-4'>
         <Image src={imagePath} alt='Foto de perfil' width={90} height={90} className='rounded-full'/>
       </div>

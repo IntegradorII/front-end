@@ -81,7 +81,7 @@ export async function KidProfile ({ profile }: KidProfileProps) {
             </div>
           ))}
         </div>
-        <Link href={'/dashboard/profile/edit'} >
+        <Link href={`/dashboard/edit-profile/${profile.id}`} >
           <button className='w-full max-w-[10rem] rounded-full py-2 px-3 bg-yellow font-bold'>Editar</button>
         </Link>
       </div>
