@@ -1,5 +1,6 @@
 import { SideBar } from '@/components/common/side-bar'
 import { ClientWrapper } from '@/components/common/client-wrapper'
+import { Header } from '@/components/common/header'
 
 interface DashboardLayoutProps {
   children: React.ReactNode
@@ -7,7 +8,8 @@ interface DashboardLayoutProps {
 
 export default function DashboardLayout ({ children }: DashboardLayoutProps) {
   return (
-    <section className='w-full max-w-[1900px] mx-auto min-h-[calc(100vh-80px)]'>
+    <section className='min-h-screen w-full pt-[80px]'>
+      <Header />
       <ClientWrapper>
         <SideBar />
         <section className='pl-[21rem] h-full'>

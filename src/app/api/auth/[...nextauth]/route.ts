@@ -5,6 +5,16 @@ import type { NextAuthOptions } from 'next-auth'
 import { PrismaAdapter } from '@auth/prisma-adapter'
 import { PrismaClient, type User } from '@prisma/client'
 import { signJwt } from '@/utils/jwt/jwt'
+// import { API_URL_BASE } from '@/utils/config'
+
+export type MyUser = User & {
+  docType: number
+  docNumber: number
+  firstName: number
+  lastName: number
+  segmentId: number
+  points: number
+}
 
 const prisma = new PrismaClient()
 
@@ -24,7 +34,7 @@ export const authOptions: NextAuthOptions = {
     async jwt ({ token, user, account }) {
       if (user && account) { // is sign in or sign up event
         // console.log('user', user)
-        const myUser = user as User
+        const myUser = user as MyUser
         token.auth_token = await signJwt({
           sub: token.sub,
           id_token: account.id_token,
@@ -33,6 +43,7 @@ export const authOptions: NextAuthOptions = {
           access_token: account.access_token,
           expires_at: account.expires_at
         })
+        token.user = myUser
       }
       return token
     },

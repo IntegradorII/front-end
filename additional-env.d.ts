@@ -9,7 +9,8 @@ declare global {
       AUTH0_CLIENT_SECRET: string
       AUTH0_ISSUER: string
       DATABASE_URL: string
-      NEXT_PUBLIC_BACKEND_URL: string
+
+      ENVIRONMENT: 'DEVELOP' | 'PRODUCTION'
     }
   }
 }

@@ -8,14 +8,14 @@ export default function App () {
       }}
       className='flex flex-col items-center gap-5 p-2 h-screen'
     >
-      <div className="flex flex-col items-start w-full h-full text-2xl text-secondary-text font-semibold gap-2 pl-10 pt-32">
-        <span className="text-3xl font-bold">BENEFICIOS</span>
-        <span>• Obtén una experiencia más personalizada.</span>
-        <span>• Lleva un registro de tus niños y mascotas.</span>
-        <span>• Visualiza las nuevas colecciones.</span>
-        <span>• Guarda tu histórico de compras.</span>
-        <span>• Obtén descuentos.</span>
-      </div>
+      <ul className="flex flex-col items-start w-full h-full text-2xl text-secondary-text font-semibold gap-2 pl-10 pt-32">
+        <li className="text-3xl font-bold">BENEFICIOS</li>
+        <li>• Obtén una experiencia más personalizada.</li>
+        <li>• Lleva un registro de tus niños y mascotas.</li>
+        <li>• Visualiza las nuevas colecciones.</li>
+        <li>• Guarda tu histórico de compras.</li>
+        <li>• Obtén descuentos.</li>
+      </ul>
     </main>
   )
 }

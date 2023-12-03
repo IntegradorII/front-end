@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import './globals.css'
 import { Inter } from 'next/font/google'
 import { Footer } from '@/components/common/footer'
-import { Header } from '@/components/common/header'
 import { SessionAuthProvider } from '@/context/session-auth-provider'
 import { auth } from '@/app/api/auth/[...nextauth]/route'
 import { LoginContextProvider } from '@/context/login-context'
@@ -28,8 +27,7 @@ export default async function RootLayout ({ children }: RootLayoutProps) {
       <body className={inter.className}>
         <SessionAuthProvider session={session}>
           <LoginContextProvider>
-            <section className='min-h-screen w-full pt-[80px]'>
-              <Header />
+            <section>
               {children}
               <Footer />
             </section>
