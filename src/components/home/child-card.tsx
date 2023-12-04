@@ -8,11 +8,11 @@ export interface ChildCardInfo {
   imagePath: string
   rship: string
   name: string
-  birthDay: string
+  birthDate: string
   path: string
 }
 
-const ChildCard = ({ imagePath, rship, name, birthDay, path }: (ChildCardInfo)) => {
+const ChildCard = ({ imagePath, rship, name, birthDate, path }: (ChildCardInfo)) => {
   return (
     <Link href={path} className='flex bg-white rounded-xl py-3 w-[22rem]'>
       <div className='px-4'>
@@ -30,7 +30,7 @@ const ChildCard = ({ imagePath, rship, name, birthDay, path }: (ChildCardInfo)) 
           <div className='text-yellow text-lg'>
             <LiaBirthdayCakeSolid/>
           </div>
-          <span className='text-secondary-text text-sm font-bold'>{birthDay}</span>
+          <span className='text-secondary-text text-sm font-bold'>{birthDate}</span>
         </div>
       </div>
     </Link>

@@ -26,7 +26,6 @@ export interface SaleItemPets {
 
 export interface KidProfile {
   id: string
-  profileType: 'kid' | 'pet'
   firstName: string
   lastName: string
   gender: string
@@ -43,7 +42,6 @@ export interface KidProfile {
 
 export interface PetProfile {
   id: string
-  profileType: 'kid' | 'pet'
   type: '' | 'dog' | 'cat'
   name: string
   breed: string
@@ -59,35 +57,75 @@ export interface PetProfile {
 export const kidProfiles: KidProfile[] = [
   {
     id: 'ax1',
-    profileType: 'kid',
     firstName: 'Pepito',
     lastName: 'Pérez',
-    gender: 'masculino',
-    birthDate: '01/01/2010',
+    gender: 'Masculino',
+    birthDate: '2010-02-19',
     topSize: 6,
     lowerSize: 10,
     shoesSize: 12,
-    profileImg: '/images/child1.png',
+    profileImg: '/images/child-avatar-1.png',
     topSizeImg: '/images/top-size.png',
     lowerSizeImg: '/images/lower-size.png',
     shoesSizeImg: '/images/shoes-size.png',
-    relation: 'primo'
+    relation: 'Hijo'
+  },
+  {
+    id: 'ax2',
+    firstName: 'Juana',
+    lastName: 'Pérez',
+    gender: 'Femenino',
+    birthDate: '2008-08-15',
+    topSize: 6,
+    lowerSize: 8,
+    shoesSize: 10,
+    profileImg: '/images/child-avatar-2.png',
+    topSizeImg: '/images/top-size.png',
+    lowerSizeImg: '/images/lower-size.png',
+    shoesSizeImg: '/images/shoes-size.png',
+    relation: 'Hija'
+  },
+  {
+    id: 'ax3',
+    firstName: 'Luis',
+    lastName: 'Giraldo',
+    gender: 'Masculino',
+    birthDate: '2015-04-17',
+    topSize: 8,
+    lowerSize: 8,
+    shoesSize: 10,
+    profileImg: '/images/child-avatar-3.png',
+    topSizeImg: '/images/top-size.png',
+    lowerSizeImg: '/images/lower-size.png',
+    shoesSizeImg: '/images/shoes-size.png',
+    relation: 'Sobrino'
   }
 ]
 
 export const petProfiles: PetProfile[] = [
   {
     id: 'bx1',
-    profileType: 'pet',
     type: 'dog',
-    name: 'Bolt',
+    name: 'Tom',
+    breed: 'Golden Retriever',
+    gender: 'Macho',
+    birthDate: '2014-01-22',
+    size: 'Grande',
+    profileImg: '/images/pet-avatar-1.png',
+    characteristcs: ['Cazador', 'Curioso', 'Travieso', 'Delicado'],
+    relation: 'Perrijo'
+  },
+  {
+    id: 'bx2',
+    type: 'cat',
+    name: 'Luna',
     breed: 'Golden Retriever',
     gender: 'Hembra',
-    birthDate: '01/01/2010',
-    size: 'Grande',
-    profileImg: '/images/pet1.png',
-    characteristcs: ['Cazador', 'Curioso', 'Travieso', 'Delicado'],
-    relation: 'hijo'
+    birthDate: '2015-03-03',
+    size: 'Pequeño',
+    profileImg: '/images/pet-avatar-2.png',
+    characteristcs: ['Cazador', 'Curioso', 'Travieso'],
+    relation: 'Gathija'
   }
 ]
 
@@ -103,6 +141,30 @@ export const saleItems: SaleItem[] = [
     name: 'Pantalones',
     image: '/images/photo-child-5.png',
     profileId: 'ax1'
+  },
+  {
+    id: 'cx3',
+    name: 'Camisa de cuadros',
+    image: '/images/photo-child-3.png',
+    profileId: 'ax2'
+  },
+  {
+    id: 'cx4',
+    name: 'Pantalones',
+    image: '/images/photo-child-5.png',
+    profileId: 'ax2'
+  },
+  {
+    id: 'cx5',
+    name: 'Camisa de cuadros',
+    image: '/images/photo-child-3.png',
+    profileId: 'ax3'
+  },
+  {
+    id: 'cx6',
+    name: 'Pantalones',
+    image: '/images/photo-child-5.png',
+    profileId: 'ax3'
   }
 ]
 
@@ -118,6 +180,18 @@ export const saleItemsPets: SaleItemPets[] = [
     name: 'Collar',
     image: '/images/photo-pet-4.png',
     profileId: 'bx1'
+  },
+  {
+    id: 'cx3',
+    name: 'Pañoleta',
+    image: '/images/photo-pet-7.png',
+    profileId: 'bx2'
+  },
+  {
+    id: 'cx4',
+    name: 'Collar',
+    image: '/images/photo-pet-4.png',
+    profileId: 'bx2'
   }
 ]
 

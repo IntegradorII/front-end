@@ -2,10 +2,8 @@ import type { Metadata } from 'next'
 import './globals.css'
 import { Inter } from 'next/font/google'
 import { Footer } from '@/components/common/footer'
-import { Header } from '@/components/common/header'
 import { SessionAuthProvider } from '@/context/session-auth-provider'
 import { auth } from '@/app/api/auth/[...nextauth]/route'
-import { LoginContextProvider } from '@/context/login-context'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -27,19 +25,10 @@ export default async function RootLayout ({ children }: RootLayoutProps) {
       </head>
       <body className={inter.className}>
         <SessionAuthProvider session={session}>
-          <LoginContextProvider>
-            <section style={{
-              gridTemplateAreas: '"header header" "sidebar main" "footer footer"',
-              gridTemplateRows: 'auto 1fr auto',
-              gridTemplateColumns: 'auto 1fr'
-            }} className='min-h-screen w-full'>
-              <div className='w-full'>
-                <Header />
-                {children}
-              </div>
-              <Footer />
-            </section>
-          </LoginContextProvider>
+          <section>
+            {children}
+            <Footer />
+          </section>
         </SessionAuthProvider>
       </body>
     </html>

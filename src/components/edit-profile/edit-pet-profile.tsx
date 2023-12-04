@@ -10,7 +10,7 @@ interface PetProfileProps {
   profile: PP
 }
 
-export async function EditPetProfile ({ profile }: PetProfileProps) {
+export function EditPetProfile ({ profile }: PetProfileProps) {
   const personality = ['Cazador', 'Curioso', 'Independiente', 'Juguetón', 'Travieso', 'Tranquilo', 'Tímido', 'Fiel']
   const sizes = ['Pequeño', 'Grande']
   const [formData, setFormData] = useState({
@@ -71,6 +71,8 @@ export async function EditPetProfile ({ profile }: PetProfileProps) {
     e.preventDefault()
   }
 
+  console.log(profile.relation)
+
   return (
     <form onSubmit={handleSubmit} className='w-full'>
       <section className='flex w-full h-full items-center'>
@@ -105,7 +107,7 @@ export async function EditPetProfile ({ profile }: PetProfileProps) {
             </div>
             <div className='flex flex-col items-center gap-2 my-10'>
               <img src={profile.profileImg} alt={profile.name} width={120} height={120} className='rounded-full'/>
-              <span className='text-secondary-text text-xl font-bold text-[#444647]'>Subir foto</span>
+              <span className='text-secondary-text text-xl font-bold'>Subir foto</span>
             </div>
             <div className='flex flex-col justify-center items-center w-full gap-4'>
               <label htmlFor="firstName" className='flex flex-col text-xl font-bold w-4/5 gap-2'>
@@ -128,8 +130,8 @@ export async function EditPetProfile ({ profile }: PetProfileProps) {
                   onChange={handleInputChange}
                   className='rounded-3xl py-1 px-3'
                 >
-                  <option value="Masculino">Masculino</option>
-                  <option value="Femenino">Femenino</option>
+                  <option value="Macho">Macho</option>
+                  <option value="Hembra">Hembra</option>
                 </select>
               </label>
               <label htmlFor="relation" className='flex flex-col text-xl font-bold w-4/5 gap-2'>
@@ -137,22 +139,14 @@ export async function EditPetProfile ({ profile }: PetProfileProps) {
                 <select
                   id="relation"
                   name="relation"
-                  value={formData.gender}
+                  value={profile.relation}
                   onChange={handleInputChange}
                   className='rounded-3xl py-1 px-3'
                 >
-                  <option value="hijo">Hijo</option>
-                  <option value="hija">Hija</option>
-                  <option value="nieto">Nieto</option>
-                  <option value="nieta">Nieta</option>
-                  <option value="sobrino">Sobrino</option>
-                  <option value="sobrina">Sobrina</option>
-                  <option value="hermano">Hermano</option>
-                  <option value="hermana">Hermana</option>
-                  <option value="primo">Primo</option>
-                  <option value="prima">Prima</option>
-                  <option value="amigo">Amigo</option>
-                  <option value="amiga">Amiga</option>
+                  <option value="Gathijo">Gathijo</option>
+                  <option value="Gathija">Gathija</option>
+                  <option value="Perrhijo">Perrhijo</option>
+                  <option value="Perrhija">Perrhija</option>
                 </select>
               </label>
               <label htmlFor="birthDate" className='flex flex-col text-xl font-bold w-4/5 gap-2'>

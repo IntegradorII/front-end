@@ -3,11 +3,13 @@ import { SlArrowLeft, SlArrowRight } from 'react-icons/sl'
 import { VerticalSeparator } from '@/components/common/vertical-separator'
 import Image from 'next/image'
 import { useState } from 'react'
+import Link from 'next/link'
 
 interface ImageInfo {
   id: string
   src: string
   alt: string
+  link: string
 }
 
 interface SuggestedProps {
@@ -57,8 +59,10 @@ const Recommended = ({ title, images }: (SuggestedProps)) => {
           {imagesToShowArray.map((image, index) => (
             <li key={image.id} className='h-full flex'>
               <VerticalSeparator percentage={100}/>
-              <div className='h-full aspect-square p-2'>
-                <Image src={image.src} alt='Imagen de prenda' width={90} height={90} className='h-full w-full object-cover'/>
+              <div className='h-full aspect-square p-2 hover:cursor-pointer'>
+                <Link href={image.link} target='_blank'>
+                  <Image src={image.src} alt='Imagen de prenda' width={90} height={90} className='h-full w-full object-cover'/>
+                </Link>
               </div>
             </li>
           ))}

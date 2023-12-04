@@ -32,8 +32,8 @@ export async function KidProfile ({ profile }: KidProfileProps) {
         <div className='w-full flex flex-col items-center justify-center gap-1 px-4'>
           <img src={profile.profileImg} alt={profile.firstName} width={120} height={120} className='rounded-full'/>
           <div className='flex flex-col justify-center items-center'>
-            <span className='text-secondary-text text-xl font-bold text-[#444647]'>{profile.firstName}</span>
-            <span className='text-secondary-text text-xl font-bold text-[#444647]'>{profile.lastName}</span>
+            <span className='text-secondary-text text-xl font-bold'>{profile.firstName}</span>
+            <span className='text-secondary-text text-xl font-bold'>{profile.lastName}</span>
           </div>
         </div>
         <table className="w-[450px] border border-transparent rounded-lg overflow-hidden">
@@ -75,7 +75,7 @@ export async function KidProfile ({ profile }: KidProfileProps) {
               <div className='flex items-center justify-around w-[400px] h-[140px] rounded-xl gap-6 bg-white'>
                 <img src={cloth.image} alt={profile.firstName} width={100} height={100} className='rounded-full object-cover bg-separator-gray' />
                 <div className='w-1/2 flex items-center justify-center'>
-                  <span className='py-1 px-3 font-semibold text-xl text-base text-secondary-text'> {cloth.size} </span>
+                  <span className='py-1 px-3 font-semibold text-xl text-secondary-text'> {cloth.size} </span>
                 </div>
               </div>
             </div>

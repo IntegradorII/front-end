@@ -16,7 +16,10 @@ const SideBarList = ({ items }: { items: LinkItem[] }) => {
       {items.map(({ name, url }: LinkItem) => (
         <li key={name} className='flex flex-col items-center font-bold w-full text-center'>
           <HorizontalSeparator percentage={100}/>
-          <Link href={url} className={`w-full py-2 rounded-full ${pathname === url ? 'actual-page' : ''}`}>{name}</Link>
+          <Link href={url} target={url.startsWith('http') ? '_blank' : ''}
+            className={`w-full py-2 rounded-full ${pathname === url ? 'actual-page' : ''}`}>
+            {name}
+          </Link>
         </li>
       ))}
     </ul>

@@ -7,16 +7,16 @@ interface KidProfileProps {
   profile: KP
 }
 
-export async function EditKidProfile ({ profile }: KidProfileProps) {
+export function EditKidProfile ({ profile }: KidProfileProps) {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
-    gender: 'Masculino',
-    relation: 'hijo',
+    gender: profile?.gender || 'Masculino',
+    relation: profile?.relation || 'Hijo',
     birthDate: new Date(),
-    topSize: 0,
-    bottomSize: 0,
-    shoesSize: 0
+    topSize: profile?.topSize || 0,
+    bottomSize: profile?.lowerSize || 0,
+    shoesSize: profile?.shoesSize || 0
   })
   console.log(formData)
   const clothes = [
@@ -62,7 +62,7 @@ export async function EditKidProfile ({ profile }: KidProfileProps) {
           <div className='w-full flex flex-col items-center justify-center gap-1 px-4'>
             <div className='flex flex-col items-center gap-2 my-4'>
               <img src={profile.profileImg} alt={profile.firstName} width={120} height={120} className='rounded-full'/>
-              <span className='text-secondary-text text-xl font-bold text-[#444647]'>Cambiar foto</span>
+              <span className='text-secondary-text text-xl font-bold'>Cambiar foto</span>
             </div>
             <div className='flex flex-col justify-center items-center w-full gap-4 my-6'>
               <label htmlFor="firstName" className='flex flex-col text-xl font-bold w-4/5 gap-2'>
@@ -96,8 +96,8 @@ export async function EditKidProfile ({ profile }: KidProfileProps) {
                   onChange={handleInputChange}
                   className='rounded-3xl py-1 px-3'
                 >
-                  <option value="masculino">Masculino</option>
-                  <option value="femenino">Femenino</option>
+                  <option value="Masculino">Masculino</option>
+                  <option value="Femenino">Femenino</option>
                 </select>
               </label>
               <label htmlFor="relation" className='flex flex-col text-xl font-bold w-4/5 gap-2'>
@@ -109,18 +109,18 @@ export async function EditKidProfile ({ profile }: KidProfileProps) {
                   onChange={handleInputChange}
                   className='rounded-3xl py-1 px-3'
                 >
-                  <option value="hijo">Hijo</option>
-                  <option value="hija">Hija</option>
-                  <option value="nieto">Nieto</option>
-                  <option value="nieta">Nieta</option>
-                  <option value="sobrino">Sobrino</option>
-                  <option value="sobrina">Sobrina</option>
-                  <option value="hermano">Hermano</option>
-                  <option value="hermana">Hermana</option>
-                  <option value="primo">Primo</option>
-                  <option value="prima">Prima</option>
-                  <option value="amigo">Amigo</option>
-                  <option value="amiga">Amiga</option>
+                  <option value="Hijo">Hijo</option>
+                  <option value="Hija">Hija</option>
+                  <option value="Nieto">Nieto</option>
+                  <option value="Nieta">Nieta</option>
+                  <option value="Sobrino">Sobrino</option>
+                  <option value="Sobrina">Sobrina</option>
+                  <option value="Hermano">Hermano</option>
+                  <option value="Hermana">Hermana</option>
+                  <option value="Primo">Primo</option>
+                  <option value="Prima">Prima</option>
+                  <option value="Amigo">Amigo</option>
+                  <option value="Amiga">Amiga</option>
                 </select>
               </label>
               <label htmlFor="birthDate" className='flex flex-col text-xl font-bold w-4/5 gap-2'>
@@ -143,13 +143,13 @@ export async function EditKidProfile ({ profile }: KidProfileProps) {
                 <div className='flex items-center justify-around w-[400px] h-[140px] rounded-xl gap-6 bg-white'>
                   <img src={cloth.image} alt={'talla'} width={100} height={100} className='rounded-full object-cover bg-separator-gray' />
                   <div className='w-1/2 flex items-center justify-center'>
-                    <label htmlFor={cloth.tag} className='flex flex-col text-xl font-bold w-4/5 gap-2'>
+                    <label htmlFor={cloth.tag} className='flex text-xl font-bold'>
                       <select
                         id={cloth.tag}
                         name={cloth.tag}
                         value={cloth.dFata}
                         onChange={handleInputChange}
-                        className='h-14 w-20 rounded-3xl py-1 px-3 bg-[#A1A2A3] text-white'
+                        className='h-14 w-20 rounded-xl bg-[#A1A2A3] py-1 px-4 text-white'
                       >
                         <option value="0">0</option>
                         <option value="2">2</option>
