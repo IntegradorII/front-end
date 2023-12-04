@@ -1,9 +1,8 @@
 import { type NextRequestWithAuth, withAuth } from 'next-auth/middleware'
 import { NextResponse } from 'next/server'
-import type { MyUser } from '@/app/api/auth/[...nextauth]/route'
+// import type { MyUser } from '@/app/api/auth/[...nextauth]/route'
 
 export const config = {
-  // rutes that are protected
   matcher: ['/', '/dashboard/:path*', '/admin/:path*', '/welcome']
 }
 
@@ -12,19 +11,13 @@ export default withAuth(
     const url = req.nextUrl
     const path = url.pathname
     const token = req.nextauth?.token
-    const user = token?.user as MyUser
+    // const user = token?.user as MyUser
     if (path === '/') {
       if (token !== null) {
         return NextResponse.redirect(new URL('/dashboard', url))
       }
       return NextResponse.redirect(new URL('/welcome', url))
     }
-    if (path === '/welcome') {
-      if (token !== null) {
-        return NextResponse.redirect(new URL('/dashboard', url))
-      }
-    }
-    console.log('user', user)
     return NextResponse.next()
   },
   {
