@@ -57,7 +57,7 @@ export async function PetProfile ({ profile }: PetProfileProps) {
         <div className='w-full flex flex-col items-center justify-center gap-1 px-4'>
           <img src={profile.profileImg} alt={profile.name} width={120} height={120} className='rounded-full'/>
           <div className='flex flex-col justify-center items-center'>
-            <span className='text-secondary-text text-xl font-bold text-[#444647]'>{profile.name}</span>
+            <span className='text-secondary-text text-xl font-bold'>{profile.name}</span>
           </div>
         </div>
         <table className="w-[450px] border border-transparent rounded-lg overflow-hidden">
