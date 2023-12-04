@@ -8,12 +8,13 @@ export interface ChildCardInfo {
   imagePath: string
   rship: string
   name: string
-  birthDay: string
+  birthDate: string
+  path: string
 }
 
-const ChildCard = ({ imagePath, rship, name, birthDay }: (ChildCardInfo)) => {
+const ChildCard = ({ imagePath, rship, name, birthDate, path }: (ChildCardInfo)) => {
   return (
-    <Link href='#' className='flex bg-white rounded-xl py-3 w-[22rem]'>
+    <Link href={path} className='flex bg-white rounded-xl py-3 w-[22rem]'>
       <div className='px-4'>
         <Image src={imagePath} alt='Foto de perfil' width={90} height={90} className='rounded-full'/>
       </div>
@@ -29,7 +30,7 @@ const ChildCard = ({ imagePath, rship, name, birthDay }: (ChildCardInfo)) => {
           <div className='text-yellow text-lg'>
             <LiaBirthdayCakeSolid/>
           </div>
-          <span className='text-secondary-text text-sm font-bold'>{birthDay}</span>
+          <span className='text-secondary-text text-sm font-bold'>{birthDate}</span>
         </div>
       </div>
     </Link>

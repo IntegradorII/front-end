@@ -8,7 +8,7 @@ interface DashboardLayoutProps {
 
 export default function DashboardLayout ({ children }: DashboardLayoutProps) {
   return (
-    <section className='min-h-screen w-full pt-[80px]'>
+    <section className='min-h-screen w-full pt-[80px] flex justify-center'>
       <Header />
       <ClientWrapper>
         <SideBar />

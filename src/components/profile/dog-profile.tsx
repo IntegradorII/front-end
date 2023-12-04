@@ -1,39 +1,63 @@
-import { type KidProfile as KP, type SaleItem, getSaleItems } from '@/app/dashboard/profile/utils'
+import { type PetProfile as PP, type SaleItemPets, getSaleItemsPets } from '@/app/dashboard/profile/utils'
 import Image from 'next/image'
 import Link from 'next/link'
 
-interface KidProfileProps {
-  profile: KP
+interface PetProfileProps {
+  profile: PP
 }
 
-export async function KidProfile ({ profile }: KidProfileProps) {
-  const saleItems: SaleItem[] = await getSaleItems(profile.id)
-  const clothes = [
+export async function PetProfile ({ profile }: PetProfileProps) {
+  const saleItems: SaleItemPets[] = await getSaleItemsPets(profile.id)
+  const personality = [
     {
-      name: 'Talla superior: ',
-      image: profile.topSizeImg,
-      size: profile.topSize
+      type: 'Cazador',
+      textColor: 'yellow',
+      color: '#444647'
     },
     {
-      name: 'Talla inferior: ',
-      image: profile.lowerSizeImg,
-      size: profile.lowerSize
+      type: 'Curioso',
+      textColor: 'black',
+      color: 'white'
     },
     {
-      name: 'Talla de calzado: ',
-      image: profile.shoesSizeImg,
-      size: profile.shoesSize
+      type: 'Independiente',
+      textColor: 'yellow',
+      color: '#444647'
+    },
+    {
+      type: 'Juguetón',
+      textColor: 'black',
+      color: 'white'
+    },
+    {
+      type: 'Travieso',
+      textColor: 'yellow',
+      color: '#444647'
+    },
+    {
+      type: 'Tranquilo',
+      textColor: 'black',
+      color: 'white'
+    },
+    {
+      type: 'Tímido',
+      textColor: 'yellow',
+      color: '#444647'
+    },
+    {
+      type: 'Fiel',
+      textColor: 'black',
+      color: 'white'
     }
   ]
   return (
-    <section className='flex w-full h-full items-center'>
+    <section className='flex w-full h-full items- justify-start'>
       <div className='flex flex-col items-center gap-6 w-1/2 border-r-separator-gray border-r-2 '>
-        <h2 className='text-2xl font-bold w-full'>Datos de {profile.firstName}</h2>
+        <h2 className='text-2xl font-bold w-full'>Datos de {profile.name}</h2>
         <div className='w-full flex flex-col items-center justify-center gap-1 px-4'>
-          <img src={profile.profileImg} alt={profile.firstName} width={120} height={120} className='rounded-full'/>
+          <img src={profile.profileImg} alt={profile.name} width={120} height={120} className='rounded-full'/>
           <div className='flex flex-col justify-center items-center'>
-            <span className='text-secondary-text text-xl font-bold'>{profile.firstName}</span>
-            <span className='text-secondary-text text-xl font-bold'>{profile.lastName}</span>
+            <span className='text-secondary-text text-xl font-bold'>{profile.name}</span>
           </div>
         </div>
         <table className="w-[450px] border border-transparent rounded-lg overflow-hidden">
@@ -66,18 +90,22 @@ export async function KidProfile ({ profile }: KidProfileProps) {
           </div>
         </div>
       </div>
-      <div className='flex flex-col gap-3 w-1/2 px-4 items-center'>
-        <h2 className='text-2xl font-bold w-full'>Tallas de {profile.firstName}</h2>
-        <div className='flex flex-col gap-5 w-full items-center'>
-          {clothes.map((cloth, index) => (
-            <div className='flex flex-col items-start gap-1 w-[400px]' key={index}>
-              <label className='pl-3 text-xl font-bold'>{cloth.name}</label>
-              <div className='flex items-center justify-around w-[400px] h-[140px] rounded-xl gap-6 bg-white'>
-                <img src={cloth.image} alt={profile.firstName} width={100} height={100} className='rounded-full object-cover bg-separator-gray' />
-                <div className='w-1/2 flex items-center justify-center'>
-                  <span className='py-1 px-3 font-semibold text-xl text-secondary-text'> {cloth.size} </span>
-                </div>
-              </div>
+      <div className='flex flex-col gap-10 w-1/2 h-full px-4 justify-between items-center'>
+        <h2 className='text-2xl font-bold w-full'>Características de {profile.name}</h2>
+        <label className='pl-3 text-xl font-bold w-full'>Tamaño:</label>
+        <div className='flex gap-10'>
+          <div className='flex flex-col items-center'>
+            <div className='flex justify-center items-center bg-[#98999A] rounded-xl py-3 px-7'>
+              <img src='/images/Pet.png' alt='perro Pequeño' width={90} height={90} />
+            </div>
+            <span className='text-m font-bold '>Grande</span>
+          </div>
+        </div>
+        <label className='pl-3 text-xl font-bold w-full'>Personalidad:</label>
+        <div className='flex flex-wrap gap-3 px-10'>
+          {personality.map((item) => (
+            <div key={item.type} className={'flex justyfy-center content-center rounded-3xl py-1 px-3'} style={{ backgroundColor: item.color }}>
+              <span className={`text-${item.textColor} font-bold`}>{item.type}</span>
             </div>
           ))}
         </div>

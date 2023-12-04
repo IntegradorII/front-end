@@ -18,6 +18,9 @@ export default withAuth(
       }
       return NextResponse.redirect(new URL('/welcome', url))
     }
+    if (path === '/dashboard/profile' || path === '/dashboard/edit-profile') {
+      return NextResponse.redirect(new URL('/dashboard', url))
+    }
     return NextResponse.next()
   },
   {
